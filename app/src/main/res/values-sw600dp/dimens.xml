@@ -1,0 +1,51 @@
+<resources>
+
+    <dimen name="button_height">60dp</dimen>
+    <dimen name="adapter_item_height">37dp</dimen>
+    <dimen name="badge_size">21dp</dimen>
+    <dimen name="view_size_1">13dp</dimen>
+    <dimen name="view_size_2">17dp</dimen>
+    <dimen name="view_size_3">24dp</dimen>
+    <dimen name="view_size_4">28dp</dimen>
+    <dimen name="view_size_5">40dp</dimen>
+    <dimen name="view_size_6">54dp</dimen>
+    <dimen name="view_size_7">68dp</dimen>
+    <dimen name="view_size_8">85dp</dimen>
+    <dimen name="view_size_9">110dp</dimen>
+    <dimen name="view_size_10">140dp</dimen>
+    <dimen name="view_size_11">170dp</dimen>
+    <dimen name="view_size_12">210dp</dimen>
+    <dimen name="view_size_13">250dp</dimen>
+    <dimen name="view_size_14">280dp</dimen>
+
+    <dimen name="text_size_normal">17sp</dimen>
+    <dimen name="text_size_m">19sp</dimen>
+    <dimen name="text_size_l">22sp</dimen>
+    <dimen name="text_size_xl">25sp</dimen>
+    <dimen name="text_size_xxl">31sp</dimen>
+    <dimen name="text_size_xxxl">43sp</dimen>
+    <dimen name="text_size_s">15sp</dimen>
+    <dimen name="text_size_xs">13sp</dimen>
+    <dimen name="text_size_xxs">12sp</dimen>
+
+    <dimen name="text_size_1">12sp</dimen>
+    <dimen name="text_size_1.5">13sp</dimen>
+    <dimen name="text_size_2">14sp</dimen>
+    <dimen name="text_size_2.5">15sp</dimen>
+    <dimen name="text_size_3">16sp</dimen>
+    <dimen name="text_size_3.5">17sp</dimen>
+    <dimen name="text_size_4">18sp</dimen>
+    <dimen name="text_size_4.5">19sp</dimen>
+    <dimen name="text_size_5">20sp</dimen>
+    <dimen name="text_size_5.5">21sp</dimen>
+    <dimen name="text_size_6">22sp</dimen>
+    <dimen name="text_size_6.5">23sp</dimen>
+    <dimen name="text_size_7">24sp</dimen>
+    <dimen name="text_size_7.5">25sp</dimen>
+    <dimen name="text_size_8">26sp</dimen>
+    <dimen name="text_size_8.5">27sp</dimen>
+    <dimen name="text_size_9">28sp</dimen>
+    <dimen name="text_size_9.5">29sp</dimen>
+    <dimen name="text_size_10">30sp</dimen>
+
+</resources>

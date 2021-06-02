@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/fragment_categories_scene"
+        tools:context=".ui.categories.CategoriesFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="3dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/date_of_birth_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_size_5"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:layout_marginEnd="@dimen/view_size_5"
+                android:layout_marginBottom="@dimen/view_size_3"
+                android:clipToPadding="false"
+                android:textColorHint="#A7A7A7"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconCheckable="true"
+                app:endIconDrawable="@drawable/ic_barcode"
+                app:endIconMode="custom"
+                app:endIconTint="@color/black"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/full_name_layout">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/date_of_birth"
+                    style="?attr/InputStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/background_rounded_4_bordered_light"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/search"
+                    android:imeOptions="actionNext"
+                    android:textColorHint="#BCBCBC" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/title"
+            style="?attr/Bold20BlackStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_size_3"
+            android:text='@{keys.all_categories_title}'
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categories"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/toolbar"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/view_size_2"
+            android:paddingEnd="@dimen/view_size_2"
+            android:paddingBottom="100dp"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:spanCount="2"
+            tools:listitem="@layout/adapter_categories_item" />
+
+        <com.armboldmind.grandmarket.shared.customview.StateLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="2dp" />
+
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="4dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Categories Page"
+                android:textColor="@color/black"
+                android:textSize="40sp" />
+        </FrameLayout>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

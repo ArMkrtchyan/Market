@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme light. -->
+    <style name="AppThemeLight" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/background_color_light</item>
+        <item name="android:windowBackground">@color/content_background_color_light</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+
+        <!-- styles attributes-->
+        <item name="baseTextStyle">@style/BaseTextStyleLight</item>
+        <item name="NormalTextStyle">@style/NormalTextStyleLight</item>
+        <item name="HeaderTextStyle">@style/HeaderTextStyleLight</item>
+        <item name="HeaderBlueTextStyle">@style/HeaderBlueTextStyleLight</item>
+        <item name="HeaderBlackTextStyle">@style/HeaderBlackTextStyleLight</item>
+        <item name="DescriptionTextStyle">@style/DescriptionTextStyleLight</item>
+        <item name="TitleTextStyle">@style/TitleTextStyleLight</item>
+        <item name="ChooseLanguageStyle">@style/ChooseLanguageStyleLight</item>
+        <item name="ButtonStyle">@style/ButtonStyleLight</item>
+        <item name="InputStyle">@style/InputStyleLight</item>
+        <item name="MyRadioButton">@style/MyRadioButtonLight</item>
+
+        <!-- Regular text styles attributes-->
+        <item name="Regular12BlackStyle">@style/Regular12BlackStyleLight</item>
+        <item name="Regular12BlueStyle">@style/Regular12BlueStyleLight</item>
+        <item name="Regular14BlackStyle">@style/Regular14BlackStyleLight</item>
+        <item name="Regular14BlueStyle">@style/Regular14BlueStyleLight</item>
+        <item name="Regular16BlackStyle">@style/Regular16BlackStyleLight</item>
+        <item name="Regular16BlueStyle">@style/Regular16BlueStyleLight</item>
+        <item name="Regular18BlackStyle">@style/Regular18BlackStyleLight</item>
+        <item name="Regular18BlueStyle">@style/Regular18BlueStyleLight</item>
+        <item name="Regular20BlackStyle">@style/Regular20BlackStyleLight</item>
+        <item name="Regular20BlueStyle">@style/Regular20BlueStyleLight</item>
+
+        <!-- Medium text styles attributes-->
+        <item name="Medium12BlackStyle">@style/Medium12BlackStyleLight</item>
+        <item name="Medium12BlueStyle">@style/Medium12BlueStyleLight</item>
+        <item name="Medium14BlackStyle">@style/Medium14BlackStyleLight</item>
+        <item name="Medium14BlueStyle">@style/Medium14BlueStyleLight</item>
+        <item name="Medium16BlackStyle">@style/Medium16BlackStyleLight</item>
+        <item name="Medium16BlueStyle">@style/Medium16BlueStyleLight</item>
+        <item name="Medium18BlackStyle">@style/Medium18BlackStyleLight</item>
+        <item name="Medium18BlueStyle">@style/Medium18BlueStyleLight</item>
+        <item name="Medium20BlackStyle">@style/Medium20BlackStyleLight</item>
+        <item name="Medium20BlueStyle">@style/Medium20BlueStyleLight</item>
+
+        <!-- Bold text styles itattributesemibutes-->
+        <item name="Bold14BlackStyle">@style/Bold14BlackStyleLight</item>
+        <item name="Bold14BlueStyle">@style/Bold14BlueStyleLight</item>
+        <item name="Bold16BlackStyle">@style/Bold16BlackStyleLight</item>
+        <item name="Bold16BlueStyle">@style/Bold16BlueStyleLight</item>
+        <item name="Bold18BlackStyle">@style/Bold18BlackStyleLight</item>
+        <item name="Bold18BlueStyle">@style/Bold18BlueStyleLight</item>
+        <item name="Bold20BlackStyle">@style/Bold20BlackStyleLight</item>
+        <item name="Bold20BlueStyle">@style/Bold20BlueStyleLight</item>
+        <item name="Bold22BlackStyle">@style/Bold22BlackStyleLight</item>
+        <item name="Bold22BlueStyle">@style/Bold22BlueStyleLight</item>
+
+        <!-- divider's attributes-->
+        <item name="dividerBackground">@color/divider_color_light</item>
+        <item name="WindowBackgroundColor">@color/content_background_color_light</item>
+        <item name="CardBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="BaseTextStyleLight">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/hint_text_color_light</item>
+        <item name="android:fontFamily">@font/regular</item>
+    </style>
+
+    <style name="NormalTextStyleLight" parent="BaseTextStyleLight">
+        <item name="android:textSize">@dimen/text_size_4</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="HeaderTextStyleLight" parent="BaseTextStyleLight">
+        <item name="android:textSize">@dimen/text_size_5</item>
+    </style>
+
+    <style name="HeaderBlueTextStyleLight" parent="BaseTextStyleLight">
+        <item name="android:textSize">@dimen/text_size_5</item>
+        <item name="android:textColor">@color/header_blue_text_color_light</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+
+    <style name="DescriptionTextStyleLight" parent="BaseTextStyleLight">
+        <item name="android:textSize">@dimen/text_size_3</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="TitleTextStyleLight" parent="BaseTextStyleLight">
+        <item name="android:textSize">@dimen/text_size_5</item>
+    </style>
+
+    <style name="ChooseLanguageStyleLight" parent="BaseTextStyleLight">
+        <item name="android:textSize">@dimen/text_size_3.5</item>
+        <item name="android:textColor">@color/header_text_color_light</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/view_size_3</item>
+    </style>
+
+    <style name="ButtonStyleLight" parent="BaseTextStyleLight">
+        <item name="android:textSize">@dimen/text_size_4</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/ripple_gradient_rounded_25</item>
+    </style>
+
+    <style name="InputStyleLight">
+        <item name="android:textSize">@dimen/text_size_4</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/view_size_1</item>
+        <item name="android:textColorHint">#80000000</item>
+        <item name="android:background">@drawable/background_rounded_4_bordered_light</item>
+    </style>
+
+    <style name="MyRadioButtonLight" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/black_50</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+
+    <style name="Slider" parent="Widget.MaterialComponents.Slider">
+        <item name="android:thumb">@drawable/slider_thumb</item>
+    </style>
+</resources>

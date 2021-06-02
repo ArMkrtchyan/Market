@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="StateLayout" />
+
+    <declare-styleable name="ds">
+        <!-- styles attributes-->
+        <attr name="baseTextStyle" format="reference" />
+        <attr name="NormalTextStyle" format="reference" />
+        <attr name="HeaderTextStyle" format="reference" />
+        <attr name="HeaderBlueTextStyle" format="reference" />
+        <attr name="HeaderBlackTextStyle" format="reference" />
+        <attr name="DescriptionTextStyle" format="reference" />
+        <attr name="TitleTextStyle" format="reference" />
+        <attr name="ChooseLanguageStyle" format="reference" />
+        <attr name="ButtonStyle" format="reference" />
+        <attr name="InputStyle" format="reference" />
+        <attr name="MyRadioButton" format="reference" />
+
+
+        <!-- Regular text styles attributes-->
+        <attr name="Regular12BlackStyle" format="reference" />
+        <attr name="Regular12BlueStyle" format="reference" />
+        <attr name="Regular14BlackStyle" format="reference" />
+        <attr name="Regular14BlueStyle" format="reference" />
+        <attr name="Regular16BlackStyle" format="reference" />
+        <attr name="Regular16BlueStyle" format="reference" />
+        <attr name="Regular18BlackStyle" format="reference" />
+        <attr name="Regular18BlueStyle" format="reference" />
+        <attr name="Regular20BlackStyle" format="reference" />
+        <attr name="Regular20BlueStyle" format="reference" />
+
+        <!-- Medium text styles attributes-->
+        <attr name="Medium12BlackStyle" format="reference" />
+        <attr name="Medium12BlueStyle" format="reference" />
+        <attr name="Medium14BlackStyle" format="reference" />
+        <attr name="Medium14BlueStyle" format="reference" />
+        <attr name="Medium16BlackStyle" format="reference" />
+        <attr name="Medium16BlueStyle" format="reference" />
+        <attr name="Medium18BlackStyle" format="reference" />
+        <attr name="Medium18BlueStyle" format="reference" />
+        <attr name="Medium20BlackStyle" format="reference" />
+        <attr name="Medium20BlueStyle" format="reference" />
+
+        <!-- Bold text styles attributes-->
+        <attr name="Bold14BlackStyle" format="reference" />
+        <attr name="Bold14BlueStyle" format="reference" />
+        <attr name="Bold16BlackStyle" format="reference" />
+        <attr name="Bold16BlueStyle" format="reference" />
+        <attr name="Bold18BlackStyle" format="reference" />
+        <attr name="Bold18BlueStyle" format="reference" />
+        <attr name="Bold20BlackStyle" format="reference" />
+        <attr name="Bold20BlueStyle" format="reference" />
+        <attr name="Bold22BlackStyle" format="reference" />
+        <attr name="Bold22BlueStyle" format="reference" />
+
+
+        <!-- divider's attributes-->
+        <attr name="dividerBackground" format="reference" />
+
+        <attr name="WindowBackgroundColor" format="color" />
+        <attr name="CardBackgroundColor" format="color" />
+
+    </declare-styleable>
+    <declare-styleable name="LoadingButton">
+        <attr name="text" format="string" />
+    </declare-styleable>
+    <declare-styleable name="Calendar"></declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+</resources>

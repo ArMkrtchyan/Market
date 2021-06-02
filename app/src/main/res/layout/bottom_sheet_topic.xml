@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.armboldmind.grandmarket.shared.enums.MessageSubjectEnum" />
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="type"
+            type="Integer" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/view_size_3"
+        android:paddingEnd="@dimen/view_size_3"
+        android:paddingBottom="@dimen/view_size_3">
+
+
+        <TextView
+            android:id="@+id/title"
+            style="?attr/Bold20BlackStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_size_4"
+            android:gravity="center"
+            android:text='@{keys.select_the_topic,default = @string/select_the_topic}'
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_size_5"
+            android:paddingStart="@dimen/view_size_2"
+            android:paddingEnd="@dimen/view_size_2">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/options_products"
+                style="?attr/Medium18BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked='@{type == MessageSubjectEnum.PRODUCTS.type}'
+                android:text='@{keys.products,default = @string/products}'
+                android:theme="@style/MyRadioButtonLight" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/options_tech_support"
+                style="?attr/Medium18BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:checked='@{type == MessageSubjectEnum.TECHNICAL_SUPPORT.type}'
+                android:text='@{keys.technical_support,default = @string/technical_support}'
+                android:theme="@style/MyRadioButtonLight" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/options_collaboration"
+                style="?attr/Medium18BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:checked='@{type == MessageSubjectEnum.COLLABORATION.type}'
+                android:text='@{keys.collaboration,default = @string/collaboration}'
+                android:theme="@style/MyRadioButtonLight" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/options_advertising_proposal"
+                style="?attr/Medium18BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:checked='@{type == MessageSubjectEnum.ADVERTISING_PROPOSAL.type}'
+                android:text='@{keys.advertising_proposal,default = @string/advertising_proposal}'
+                android:theme="@style/MyRadioButtonLight" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/options_review"
+                style="?attr/Medium18BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:checked='@{type == MessageSubjectEnum.REVIEW.type}'
+                android:text='@{keys.review,default = @string/review}'
+                android:theme="@style/MyRadioButtonLight" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/options_comments_and_suggestions"
+                style="?attr/Medium18BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:checked='@{type == MessageSubjectEnum.COMMENTS_AND_SUGGESTIONS.type}'
+                android:text='@{keys.comments_and_suggestions,default = @string/comments_and_suggestions}'
+                android:theme="@style/MyRadioButtonLight" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/options_other"
+                style="?attr/Medium18BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:checked='@{type == MessageSubjectEnum.OTHER.type}'
+                android:text='@{keys.other,default = @string/other}'
+                android:theme="@style/MyRadioButtonLight" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/save"
+            style="?attr/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/view_size_5"
+            android:text='@{keys.save,default = @string/save}'
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date_picker" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

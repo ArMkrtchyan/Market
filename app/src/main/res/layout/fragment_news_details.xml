@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="newsAndEvents"
+            type="com.armboldmind.grandmarket.data.models.domain.NewsAndEvents" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/CardBackgroundColor"
+            android:elevation="3dp"
+            app:navigationIcon="@drawable/ic_back">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    style="?attr/Bold18BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical" />
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/view_size_3"
+            android:paddingTop="@dimen/view_size_3"
+            android:paddingEnd="@dimen/view_size_3"
+            android:paddingBottom="100dp"
+            android:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/medium"
+                    android:textColor="@color/black_50"
+                    android:textSize="@dimen/text_size_2"
+                    android:transitionName='@{String.format("%s%s","newsDate",String.valueOf(newsAndEvents.id))}'
+                    app:createdDate='@{newsAndEvents.createdDate}'
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="01 March 2021" />
+
+                <TextView
+                    android:id="@+id/title"
+                    style="?attr/DescriptionTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_size_2"
+                    android:layout_marginBottom="@dimen/view_size_1"
+                    android:fontFamily="@font/medium"
+                    android:text='@{newsAndEvents.title}'
+                    android:textSize="@dimen/text_size_5"
+                    android:transitionName='@{String.format("%s%s","newsTitle",String.valueOf(newsAndEvents.id))}'
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/date"
+                    tools:text="Dear customers, we inform you that some instructions of the commandant's officee inform you that some instructions of the commandant's officee inform you that some instructions of the commandant's office have been revised." />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/images_pager"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/view_size_3"
+                    android:transitionName='@{String.format("%s%s","newsImage",String.valueOf(newsAndEvents.id))}'
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintDimensionRatio="335:200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="@dimen/view_size_1"
+                    android:background="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/images_pager"
+                    app:tabBackground="@drawable/tab_page_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabRippleColor="@null" />
+
+                <TextView
+                    android:id="@+id/description"
+                    style="?attr/DescriptionTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_size_3"
+                    android:layout_marginBottom="@dimen/view_size_1"
+                    android:text='@{newsAndEvents.description}'
+                    android:textSize="@dimen/text_size_4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tab_layout"
+                    tools:text="Dear customers, we inform you that some instructions of the commandant's officee inform you that some instructions of the commandant's officee inform you that some instructions of the commandant's office have been revised." />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.armboldmind.grandmarket.shared.customview.StateLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="2dp" />
+    </RelativeLayout>
+</layout>

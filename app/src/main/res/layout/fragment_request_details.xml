@@ -1,0 +1,224 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="request"
+            type="com.armboldmind.grandmarket.data.models.domain.RequestProduct" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/CardBackgroundColor"
+            android:elevation="3dp"
+            app:navigationIcon="@drawable/ic_back">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="?attr/Bold18BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text='@{keys.requests,default = @string/requests}' />
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_margin="@dimen/view_size_2"
+            android:background="@drawable/shadow_122754"
+            android:padding="8dp"
+            android:transitionName='@{String.format("%s%s","MainLayoutTransitionName",String.valueOf(request.id))}'
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/view_size_1"
+                    android:paddingBottom="@dimen/view_size_1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/images"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:transitionName='@{String.format("%s%s","ImageTransitionName",String.valueOf(request.id))}'
+                            app:layout_constraintDimensionRatio="315:171"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/tab_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_marginTop="@dimen/view_size_1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/images"
+                            app:tabBackground="@drawable/tab_page_selector"
+                            app:tabGravity="center"
+                            app:tabIndicatorHeight="0dp"
+                            app:tabRippleColor="@null" />
+
+                        <TextView
+                            android:id="@+id/title"
+                            style="?attr/Bold16BlackStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/view_size_1"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text='@{request.productName}'
+                            android:transitionName='@{String.format("%s%s","TitleTransitionName",String.valueOf(request.id))}'
+                            app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+
+
+                        <TextView
+                            android:id="@+id/description"
+                            style="?attr/Medium16BlackStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:ellipsize="end"
+                            android:maxLines="3"
+                            android:text='@{request.description}'
+                            android:transitionName='@{String.format("%s%s","DescriptionTransitionName",String.valueOf(request.id))}'
+                            app:layout_constraintTop_toBottomOf="@id/title" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:background="@drawable/background_rounded_divider"
+                        android:backgroundTint="#DCDCDC"
+                        android:transitionName='@{String.format("%s%s","DividerTransitionName",String.valueOf(request.id))}' />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/category_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:transitionName='@{String.format("%s%s","CategoryTransitionName",String.valueOf(request.id))}'
+                        android:weightSum="12"
+                        app:layout_constraintTop_toBottomOf="@id/divider">
+
+                        <TextView
+                            style="?attr/Medium16BlackStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:paddingEnd="5dp"
+                            android:text="@{keys.categories_,default = `Categories:`}"
+                            android:textColor="#585858" />
+
+                        <TextView
+                            android:id="@+id/category"
+                            style="?attr/Bold16BlackStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:paddingEnd="5dp"
+                            android:text='@{request.categoryName}' />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/brand_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:transitionName='@{String.format("%s%s","BrandTransitionName",String.valueOf(request.id))}'
+                        android:weightSum="12"
+                        app:layout_constraintTop_toBottomOf="@id/delivery_address_layout">
+
+                        <TextView
+                            style="?attr/Medium16BlackStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:paddingEnd="@dimen/view_size_1"
+                            android:text="@{keys.brand_,default = `Brand:`}"
+                            android:textColor="#585858" />
+
+                        <TextView
+                            android:id="@+id/brand"
+                            style="?attr/Bold16BlackStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:text='@{request.brandName}' />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/date_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:transitionName='@{String.format("%s%s","DateTransitionName",String.valueOf(request.id))}'
+                        android:weightSum="12"
+                        app:layout_constraintTop_toBottomOf="@id/order_date_layout">
+
+                        <TextView
+                            style="?attr/Medium16BlackStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:paddingEnd="@dimen/view_size_1"
+                            android:text="@{keys.date_,default = `Date:`}"
+                            android:textColor="#585858" />
+
+                        <TextView
+                            android:id="@+id/date"
+                            style="?attr/Bold16BlackStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            app:requestCreatedDate="@{request.createdDate}" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+        <com.armboldmind.grandmarket.shared.customview.StateLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="2dp" />
+
+    </RelativeLayout>
+</layout>

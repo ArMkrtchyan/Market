@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/view_size_4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rounded_6"
+            android:paddingTop="@dimen/view_size_3"
+            android:paddingBottom="@dimen/view_size_3">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_subscribtions_empty"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/title"
+                style="?attr/HeaderBlueTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="@dimen/view_size_3"
+                android:paddingEnd="@dimen/view_size_3"
+                android:text="@string/please_choose_the_reason_you_want_to_cancel_your_order"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_6"
+                app:layout_constraintTop_toBottomOf="@id/image" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/view_size_3"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+            <TextView
+                android:id="@+id/negative"
+                style="?attr/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/view_size_8"
+                android:layout_marginBottom="@dimen/view_size_3"
+                android:background="@drawable/background_rounded_25_bordered_blue"
+                android:text="@string/close"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/positive"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <TextView
+                android:id="@+id/positive"
+                style="?attr/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/view_size_8"
+                android:layout_marginBottom="@dimen/view_size_3"
+                android:text="@string/cancel_order"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/negative"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <RelativeLayout
+                android:id="@+id/cancel_reason_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_size_1"
+                android:background="@drawable/background_rounded_4_bordered_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintWidth_percent="0.85">
+
+                <TextView
+                    android:id="@+id/selected_reason"
+                    style="?attr/DescriptionTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/arrow"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/medium"
+                    android:gravity="center_vertical"
+                    android:minHeight="@dimen/button_height"
+                    android:paddingStart="@dimen/view_size_3"
+                    android:paddingTop="@dimen/view_size_1"
+                    android:paddingEnd="@dimen/view_size_3"
+                    android:paddingBottom="@dimen/view_size_1"
+                    android:text="@string/the_purchase_is_not_longer_needed"
+                    android:textSize="@dimen/text_size_4" />
+
+                <ImageView
+                    android:id="@+id/arrow"
+                    android:layout_width="16dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/view_size_3"
+                    android:rotation="-90"
+                    android:src="@drawable/ic_arrow_left"
+                    app:tint="@color/black"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    android:id="@+id/reason_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/selected_reason"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/view_size_1"
+                        android:layout_marginEnd="@dimen/view_size_1"
+                        android:background="@color/black_20" />
+
+                    <TextView
+                        android:id="@+id/not_longer_needed"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/view_size_3"
+                        android:paddingTop="@dimen/view_size_1"
+                        android:paddingEnd="@dimen/view_size_3"
+                        android:paddingBottom="@dimen/view_size_1"
+                        android:text="@string/the_purchase_is_not_longer_needed"
+                        android:textSize="@dimen/text_size_4" />
+
+                    <TextView
+                        android:id="@+id/cancelled_to_reorder"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/view_size_3"
+                        android:paddingTop="@dimen/view_size_1"
+                        android:paddingEnd="@dimen/view_size_3"
+                        android:paddingBottom="@dimen/view_size_1"
+                        android:text="@string/cancelled_to_reorder"
+                        android:textSize="@dimen/text_size_4" />
+
+                    <TextView
+                        android:id="@+id/other"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/view_size_3"
+                        android:paddingTop="@dimen/view_size_1"
+                        android:paddingEnd="@dimen/view_size_3"
+                        android:paddingBottom="@dimen/view_size_1"
+                        android:text="@string/other"
+                        android:textSize="@dimen/text_size_4" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.text.HtmlCompat" />
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="productDetails"
+            type="com.armboldmind.grandmarket.data.models.domain.ProductDetails" />
+
+        <variable
+            name="isfavorite"
+            type="Boolean" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.productdetails.ProductDetailsActivity">
+
+        <FrameLayout
+            android:id="@+id/images_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/images_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/view_size_1"
+                android:layout_marginBottom="50dp"
+                android:background="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/images_pager"
+                app:tabBackground="@drawable/tab_page_selector"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                app:tabRippleColor="@null" />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="35dp"
+            android:elevation="3dp"
+            app:navigationIcon="@drawable/ic_back">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_toStartOf="@id/favorite"
+                    android:paddingStart="@dimen/view_size_1"
+                    android:paddingEnd="@dimen/view_size_1"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_share"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/view_size_2"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="@dimen/view_size_1"
+                    android:scaleType="centerInside"
+                    android:src="@{isfavorite ? @drawable/ic_favorite : @drawable/ic_menu_item_favorites_unselected, default = @drawable/ic_menu_item_favorites_unselected}"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/bottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_bottom_sheet_dialog_white"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"
+            android:visibility="invisible"
+            app:behavior_fitToContents="true"
+            app:behavior_halfExpandedRatio="0.5"
+            app:behavior_hideable="false"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/brand"
+                        style="?attr/Medium16BlueStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/view_size_3"
+                        android:text='@{productDetails.brandName, default = "Nike"}'
+                        android:textColor="#374864"
+                        app:layout_constraintEnd_toStartOf="@id/old_price"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/old_price"
+                        style="?attr/Bold18BlackStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/view_size_3"
+                        android:text='@{productDetails.productPriceFormatted, default = "1,5235d"}'
+                        android:textColor="@color/black_50"
+                        android:visibility='@{productDetails.discountedPrice > 0 ? View.VISIBLE : View.GONE}'
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/brand" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="?attr/Bold22BlackStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_size_3"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:layout_marginEnd="@dimen/view_size_1"
+                        android:text='@{productDetails.productName,default = "Woomans sports bag black saa sx asxas saxsa"}'
+                        app:layout_constraintEnd_toStartOf="@id/price"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/brand" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        style="?attr/Bold22BlackStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/view_size_3"
+                        android:text='@{productDetails.discountedPrice > 0 ? productDetails.discountedPriceFormatted : productDetails.productPriceFormatted, default = "1,5235d"}'
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/name" />
+
+                    <TextView
+                        android:id="@+id/description"
+                        style="?attr/Regular18BlackStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_size_3"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:layout_marginEnd="@dimen/view_size_3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/name"
+                        app:setHtml="@{productDetails.productDescription}" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/attributes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/description"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/adapter_attributes_details_color" />
+
+                    <TextView
+                        android:id="@+id/quantity"
+                        style="?attr/Medium16BlackStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_size_3"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:layout_marginEnd="@dimen/view_size_3"
+                        android:text="@{keys.quantity, default = `Quantity`}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/attributes" />
+
+                    <ImageView
+                        android:id="@+id/minus"
+                        android:layout_width="@dimen/adapter_item_height"
+                        android:layout_height="@dimen/adapter_item_height"
+                        android:layout_marginStart="@dimen/view_size_3"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:background="@drawable/background_badge"
+                        android:backgroundTint="@color/colorAccent"
+                        android:src="@drawable/ic_minus"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/quantity" />
+
+                    <TextView
+                        android:id="@+id/count"
+                        style="?attr/Medium16BlackStyle"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_size_1"
+                        android:gravity="center"
+                        android:text="1"
+                        app:layout_constraintBottom_toBottomOf="@id/minus"
+                        app:layout_constraintStart_toEndOf="@id/minus"
+                        app:layout_constraintTop_toTopOf="@id/minus" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/plus"
+                        android:layout_width="@dimen/adapter_item_height"
+                        android:layout_height="@dimen/adapter_item_height"
+                        android:layout_marginStart="@dimen/view_size_1"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:background="@drawable/background_badge"
+                        android:backgroundTint="@color/colorAccent"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_add"
+                        android:tint="@color/white"
+                        app:layout_constraintStart_toEndOf="@id/count"
+                        app:layout_constraintTop_toBottomOf="@id/quantity" />
+
+                    <TextView
+                        android:id="@+id/related_title"
+                        style="?attr/Bold22BlackStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_size_3"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:layout_marginEnd="@dimen/view_size_3"
+                        android:text="@{keys.products_related_title, default = `Products related to this item`}"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/minus" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/related_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/view_size_2"
+                        android:paddingEnd="@dimen/view_size_2"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintHeight_min="180dp"
+                        app:layout_constraintTop_toBottomOf="@id/related_title"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/adapter_home_discounts" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </FrameLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/buttons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/negative"
+                style="?attr/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/view_size_3"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:layout_marginEnd="@dimen/view_size_1"
+                android:layout_marginBottom="@dimen/view_size_3"
+                android:layout_weight="1"
+                android:background="@drawable/background_rounded_25_bordered_blue"
+                android:text="@{keys.subscribe, default = `Subscribe`}"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/positive"
+                style="?attr/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/view_size_1"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:layout_marginEnd="@dimen/view_size_3"
+                android:layout_marginBottom="@dimen/view_size_3"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_basket_selected"
+                android:paddingStart="16dp"
+                android:paddingEnd="10dp"
+                android:text="@{keys.add_to_basket, default = `Add to basket`}" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.armboldmind.grandmarket.shared.customview.StateLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="2dp" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

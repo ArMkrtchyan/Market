@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="isLoading"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.more.personalInformation.VerifyLoginInfoFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/CardBackgroundColor"
+            android:elevation="3dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="?attr/Bold18BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text='@{keys.login_information,default = @string/login_information}' />
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+
+            <TextView
+                android:id="@+id/title"
+                style="?attr/Bold20BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_size_5"
+                android:text='@{keys.verification, default = @string/verification}'
+                android:textAllCaps="true"
+                android:transitionName="TitleTransitionName"
+                app:layout_constraintTop_toBottomOf="@id/logo" />
+
+            <TextView
+                android:id="@+id/description"
+                style="?attr/Regular14BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_size_5"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:layout_marginEnd="@dimen/view_size_5"
+                android:transitionName="DescriptionTransitionName"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/code_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_size_5"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:layout_marginEnd="@dimen/view_size_5"
+                android:clipToPadding="false"
+                android:textColorHint="#A7A7A7"
+                android:transitionName="PhoneLayoutTransitionName"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/description">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/verification_code"
+                    style="?attr/InputStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:enabled="@{!isLoading}"
+                    android:hint='@{keys.enter_the_code, default = @string/enter_the_code}'
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/resend"
+                style="?attr/Bold14BlackStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_size_6"
+                android:layout_marginTop="@dimen/view_size_2"
+                android:gravity="start"
+                android:text='@{keys.resend_again, default = @string/resend_again}'
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/code_layout" />
+
+            <TextView
+                android:id="@+id/timer"
+                style="?attr/Medium14BlackStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/view_size_5"
+                android:layout_marginTop="@dimen/view_size_2"
+                android:layout_marginEnd="@dimen/view_size_6"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/code_layout"
+                tools:text="00:05" />
+
+            <com.armboldmind.grandmarket.shared.customview.LoadingButton
+                android:id="@+id/verify"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/view_size_5"
+                android:layout_marginTop="@dimen/view_size_7"
+                android:layout_marginEnd="@dimen/view_size_5"
+                android:transitionName="ButtonTransitionName"
+                app:layout_constraintBottom_toTopOf="@id/change_phone_or_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_layout"
+                app:layout_constraintWidth_percent="0.6"
+                app:text=" " />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

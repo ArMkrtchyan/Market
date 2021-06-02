@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="notification"
+            type="com.armboldmind.grandmarket.data.models.domain.Notification" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background='@{!notification.seen ? @color/unseen_color : @color/seen_color ,default = @color/unseen_color}'
+        android:paddingBottom="@dimen/view_size_1">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/view_size_3"
+            android:layout_marginTop="@dimen/view_size_3"
+            android:backgroundTintMode="src_over"
+            android:padding="8dp"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.1"
+            tools:background="@drawable/background_notification_nothing"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_grant_market" />
+
+        <TextView
+            android:id="@+id/title"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_size_1"
+            android:layout_marginEnd="@dimen/view_size_3"
+            android:fontFamily="@font/medium"
+            android:text='@{notification.title}'
+            android:textSize="@dimen/text_size_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon"
+            app:layout_constraintTop_toTopOf="@id/icon"
+            tools:text="The product you watched has a 10% discount." />
+
+        <TextView
+            android:id="@+id/description"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_size_1"
+            android:layout_marginEnd="@dimen/view_size_3"
+            android:text="@{notification.message}"
+            android:textSize="@dimen/text_size_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            tools:text="Hurry up to buy at an affordable price." />
+
+        <TextView
+            android:id="@+id/date"
+            notificationDate="@{notification.sendDate}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_size_1"
+            android:layout_marginEnd="@dimen/view_size_3"
+            android:fontFamily="@font/regular"
+            android:textColor='@{notification.seen ? @color/black : @color/black_60, default = @color/black_60}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            tools:text="04.11.2020 11:35" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

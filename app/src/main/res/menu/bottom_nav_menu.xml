@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/bottom_item_selector_home"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/categories"
+        android:icon="@drawable/bottom_item_selector_categories"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/placeholder"
+        android:title="" />
+
+    <item
+        android:id="@+id/favorites"
+        android:icon="@drawable/bottom_item_selector_favorites"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/more"
+        android:icon="@drawable/bottom_item_selector_profile"
+        tools:ignore="MenuTitle" />
+</menu>

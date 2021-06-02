@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.more.settings.NotificationsSettingsFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/CardBackgroundColor"
+            android:elevation="3dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    style="?attr/Bold18BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text='@{keys.notifications, default = @string/notifications}' />
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/push_title"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_size_3"
+            android:text='@{keys.notifications_about_subscriptions, default = @string/get_notifications_about_your_order_and_subscriptions}'
+            android:textSize="@dimen/text_size_4"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+
+        <TextView
+            android:id="@+id/push_notifications"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_size_3"
+            android:fontFamily="@font/medium"
+            android:text='@{keys.push_notifications, default = @string/push_notifications}'
+            android:textSize="@dimen/text_size_4"
+            app:layout_constraintEnd_toStartOf="@id/push_notifications_switch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/push_title" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/push_notifications_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_size_3"
+            app:layout_constraintBottom_toBottomOf="@id/push_notifications"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/push_notifications" />
+
+        <TextView
+            android:id="@+id/email_notifications"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_size_3"
+            android:fontFamily="@font/medium"
+            android:text='@{keys.email_notifications, default = @string/email_notifications}'
+            android:textSize="@dimen/text_size_4"
+            app:layout_constraintEnd_toStartOf="@id/push_notifications_switch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/push_notifications" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/email_notifications_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_size_3"
+            app:layout_constraintBottom_toBottomOf="@id/email_notifications"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/email_notifications" />
+
+        <TextView
+            android:id="@+id/marketing_title"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_size_3"
+            android:text='@{keys.notifications_about__discounts, default = @string/notifications}'
+            android:textSize="@dimen/text_size_4"
+            app:layout_constraintTop_toBottomOf="@id/email_notifications" />
+
+        <TextView
+            android:id="@+id/marketing_notifications"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_size_3"
+            android:fontFamily="@font/medium"
+            android:text='@{keys.marketing_notifications, default = @string/marketing_notifications}'
+            android:textSize="@dimen/text_size_4"
+            app:layout_constraintEnd_toStartOf="@id/marketing_notifications_switch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/marketing_title" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/marketing_notifications_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_size_3"
+            app:layout_constraintBottom_toBottomOf="@id/marketing_notifications"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/marketing_notifications" />
+
+        <com.armboldmind.grandmarket.shared.customview.StateLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="2dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

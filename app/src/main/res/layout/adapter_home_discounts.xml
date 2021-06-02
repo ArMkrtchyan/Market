@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="newsAndEvents"
+            type="com.armboldmind.grandmarket.data.models.domain.NewsAndEvents" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/shadow_122754"
+        android:padding="8dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="160dp"
+            android:layout_height="207dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp"
+            app:layout_constraintDimensionRatio="160:207"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/view_size_1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/image_card"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintDimensionRatio="148:94"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:shimmer_colored="true"
+                        app:shimmer_duration="1500"
+                        app:shimmer_highlight_color="@color/shimmer_color_light"
+                        app:shimmer_repeat_mode="restart"
+                        app:shimmer_shape="linear">
+
+                        <View
+                            android:id="@+id/thumbnail"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white_66" />
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/faq_header" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    style="?attr/DescriptionTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/background_rounded_2"
+                    android:backgroundTint="#E10505"
+                    android:backgroundTintMode="src_over"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="-10%"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_3"
+                    app:layout_constraintStart_toStartOf="@id/image_card"
+                    app:layout_constraintTop_toTopOf="@id/image_card" />
+
+                <ImageView
+                    android:id="@+id/favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/ic_favorite"
+                    app:layout_constraintEnd_toEndOf="@id/image_card"
+                    app:layout_constraintTop_toTopOf="@id/image_card"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/brand"
+                    style="?attr/HeaderBlueTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/medium"
+                    android:lines="1"
+                    android:text="Thalgo Spa"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/text_size_2.5"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/image_card"
+                    app:layout_constraintStart_toStartOf="@id/image_card"
+                    app:layout_constraintTop_toBottomOf="@id/image_card" />
+
+                <TextView
+                    android:id="@+id/title"
+                    style="?attr/DescriptionTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/medium"
+                    android:lines="2"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="Arctique Shower Foam"
+                    android:textSize="@dimen/text_size_2.5"
+                    app:layout_constraintEnd_toEndOf="@id/image_card"
+                    app:layout_constraintStart_toStartOf="@id/image_card"
+                    app:layout_constraintTop_toBottomOf="@id/brand" />
+
+                <TextView
+                    android:id="@+id/price"
+                    style="?attr/DescriptionTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/medium"
+                    android:maxLines="1"
+                    android:text="1,350֏"
+                    android:textSize="@dimen/text_size_5"
+                    app:layout_constraintStart_toStartOf="@id/image_card"
+                    app:layout_constraintTop_toBottomOf="@id/title" />
+
+                <TextView
+                    android:id="@+id/old_price"
+                    style="?attr/DescriptionTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/medium"
+                    android:maxLines="1"
+                    android:text="1,350֏"
+                    android:textColor="#616161"
+                    android:textSize="@dimen/text_size_3"
+                    app:layout_constraintBottom_toBottomOf="@id/price"
+                    app:layout_constraintEnd_toEndOf="@id/image_card"
+                    app:layout_constraintStart_toEndOf="@id/price"
+                    app:layout_constraintTop_toTopOf="@id/price" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

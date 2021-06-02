@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.armboldmind.grandmarket.shared.enums.MessageSubjectEnum" />
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="type"
+            type="Integer" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/view_size_3"
+        android:paddingEnd="@dimen/view_size_3"
+        android:paddingBottom="@dimen/view_size_3">
+
+
+        <TextView
+            android:id="@+id/title"
+            style="?attr/Bold20BlackStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_size_4"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text='@string/select_the_topic' />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_size_5"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/view_size_2"
+            android:paddingEnd="@dimen/view_size_2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/adapter_radoi_button_item" />
+
+        <TextView
+            android:id="@+id/save"
+            style="?attr/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/view_size_5"
+            android:text='@{keys.save,default = @string/save}'
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date_picker" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

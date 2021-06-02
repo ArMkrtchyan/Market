@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.armboldmind.grandmarket.shared.enums.MessageSubjectEnum" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isPriceRangeMustShow"
+            type="Boolean" />
+
+        <variable
+            name="isColorsMustShow"
+            type="Boolean" />
+
+        <variable
+            name="isSizesMustShow"
+            type="Boolean" />
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="type"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/filter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="50dp"
+            android:paddingBottom="100dp"
+            tools:listitem="@layout/adapter_filter_colors"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bottom_sheet_dialog"
+            android:paddingStart="@dimen/view_size_5"
+            android:paddingEnd="@dimen/view_size_5"
+            android:paddingBottom="@dimen/view_size_2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                style="?attr/Bold20BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_size_4"
+                android:gravity="center"
+                android:text='@{keys.filter,default = "Filter"}'
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/reset"
+                style="?attr/Bold18BlueStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_marginTop="@dimen/view_size_4"
+                android:gravity="center"
+                android:text='@{keys.reset,default = "Reset"}'
+                app:layout_constraintTop_toTopOf="parent" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/background_gradient"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.armboldmind.grandmarket.shared.customview.LoadingButton
+            android:id="@+id/view_items"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="@dimen/view_size_3"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/view_size_3"
+            app:text=" "
+            android:layout_marginBottom="@dimen/view_size_4"
+            app:layout_constraintTop_toTopOf="@id/background" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

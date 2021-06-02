@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="newsAndEvents"
+            type="com.armboldmind.grandmarket.data.models.domain.NewsAndEvents" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_size_3"
+        android:orientation="vertical"
+        android:scaleX="1.025"
+        android:scaleY="1.025">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/shadow_122754"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/view_size_1">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/subtotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="12"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            style="?attr/HeaderBlackTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="6"
+                            android:text="@string/subtotal" />
+
+                        <TextView
+                            android:id="@+id/subtotal_price"
+                            style="?attr/HeaderBlackTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="6"
+                            android:gravity="end"
+                            android:text="1,850 ֏"
+                            android:textStyle="bold" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/subtotal_delivery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:weightSum="12"
+                        app:layout_constraintTop_toBottomOf="@id/subtotal">
+
+                        <TextView
+                            style="?attr/HeaderBlackTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="9"
+                            android:text="@string/standart_delivery" />
+
+                        <TextView
+                            android:id="@+id/subtotal_delivery_price"
+                            style="?attr/HeaderBlackTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="end"
+                            android:text="500 ֏"
+                            android:textStyle="bold" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="@dimen/view_size_1"
+                        android:alpha="0.2"
+                        android:background="@drawable/background_rounded_divider"
+                        android:backgroundTint="@color/colorAccent"
+                        app:layout_constraintTop_toBottomOf="@id/subtotal_delivery" />
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:weightSum="12"
+                        app:layout_constraintTop_toBottomOf="@id/divider">
+
+                        <TextView
+                            style="?attr/HeaderBlackTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:paddingEnd="@dimen/view_size_1"
+                            android:text="@string/total"
+                            android:textSize="@dimen/text_size_6" />
+
+                        <TextView
+                            android:id="@+id/total"
+                            style="?attr/HeaderBlackTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="end"
+                            android:text="2,350 ֏"
+                            android:textSize="@dimen/text_size_6"
+                            android:textStyle="bold" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.armboldmind.grandmarket.shared.customview.LoadingButton
+            android:id="@+id/footer_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/view_size_5"
+            android:layout_marginEnd="@dimen/view_size_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/content"
+            app:layout_constraintWidth_percent="0.48"
+            app:text="@string/cancel_order" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

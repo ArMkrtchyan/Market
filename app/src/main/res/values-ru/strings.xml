@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Grand Market</string>
+
+    <!--    Global string resources   -->
+    <string name="next">Next</string>
+    <string name="done">Done</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="retry">Retry</string>
+    <string name="search">Search</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="comment">Comment</string>
+    <string name="close">Close</string>
+    <string name="other">Other</string>
+    <string name="send">Send</string>
+
+    <!--    Months string resources   -->
+    <string name="january">Январь</string>
+    <string name="february">Февраль</string>
+    <string name="march">Март</string>
+    <string name="april">Апрель</string>
+    <string name="may">Май</string>
+    <string name="june">Июнь</string>
+    <string name="july">Июль</string>
+    <string name="august">August</string>
+    <string name="september">Сентябрь</string>
+    <string name="october">October</string>
+    <string name="november">Ноябрь</string>
+    <string name="december">Декабрь</string>
+
+    <!--  Empty states string resources   -->
+    <string name="empty_notifications_text">You don\'t have any\nnotifications yet.</string>
+    <string name="empty_subscriptions_text">You haven\'t subscribed any\nproduct yet..</string>
+    <string name="empty_requests_text">You don\'t have any requests yet.</string>
+    <string name="empty_basket_text">You basket is empty.</string>
+    <string name="empty_favorites_text">You don\'t have any\nfavorite product.</string>
+    <string name="empty_addresses_text">You don\'t have any\nsaved addresses yet.</string>
+    <string name="empty_cards_text">You don\'t have any\nattached cards yet.</string>
+    <string name="empty_orders_text">You don\'t have any orders yet.</string>
+    <string name="empty_search_text">Nothing was found for\nquery $.</string>
+
+    <!--    Messages string resources   -->
+    <string name="default_error_message">Sorry something went wrong. Please try again later.</string>
+    <string name="default_network_error_title">No internet connection.</string>
+    <string name="default_network_error_description">No internet connection.\nPlease try again later.</string>
+    <string name="default_server_error_title">Internal server error.</string>
+    <string name="default_server_error_description">We are trying to solve the problem. Please try again later.</string>
+    <string name="default_empty_title">Found nothing.</string>
+    <string name="default_empty_description">We are trying to find something.</string>
+    <string name="server_error">Server error</string>
+    <string name="network_error">Network error</string>
+    <string name="check_internet_connection">Please check your internet connection and try again.</string>
+    <string name="incorrect_fields">Some of the fields is not filled or incorrect. Please, recheck to continue</string>
+    <string name="enter_verification_code">Enter the verification code</string>
+    <string name="incorrect_password">Incorrect password</string>
+    <string name="passwords_dont_match">Passwords don\'t match.</string>
+    <string name="incorrect_email">Incorrect email</string>
+    <string name="incorrect_phone">Incorrect phone number</string>
+    <string name="email_or_phone_required">Email or phone number is required</string>
+    <string name="wrong_code_message">Incorrect verification code</string>
+    <string name="to_many_request_message">Your action has been temporarily blocked. Please try again later</string>
+    <string name="user_exist">User with this phone number already exist</string>
+
+    <!-- Dialogs -->
+    <string name="delete_card_title">Delete card</string>
+    <string name="delete_card_description">Are you sure to delete this card?</string>
+    <string name="delete_photo_title">Delete photo</string>
+    <string name="delete_photo_description">Are you sure to delete your profile photo?</string>
+    <string name="delete_address_title">Delete address</string>
+    <string name="delete_address_description">Are you sure to delete this address?</string>
+    <string name="default_address_title">Default address</string>
+    <string name="default_address_description">Are you sure to set this address as default?</string>
+    <string name="sign_out">Sign out</string>
+    <string name="sign_out_description">Are you sure you want to sign out?</string>
+    <string name="thank_you">Thank you!</string>
+    <string name="message_successfully_sent">Your message was successfully sent.</string>
+
+    <!--    Choose language string resources   -->
+    <string name="select_your_display_language">Select your display language</string>
+    <!--    Home page string resources   -->
+    <string name="what_are_you_looking_for">What are you looking for?</string>
+    <!--    Categories page string resources   -->
+    <!--    Basket page string resources   -->
+    <string name="basket">Basket</string>
+    <!--    Favorites page string resources   -->
+    <string name="favorites">Favorites</string>
+    <!--    More page string resources   -->
+    <string name="sign_in_to_discover_new_features_make_purchases_and_track_orders">Sign in to discover new features, make purchases and track orders.</string>
+    <string name="welcome">WELCOME</string>
+
+    <!--    Authorization pages string resources   -->
+    <string name="sign_in">Sign in</string>
+    <string name="please_enter_your_login_and_password">Please enter your login and password</string>
+    <string name="phone_or_email_address">Email or phone number</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign up</string>
+    <string name="sign_up">Sign up</string>
+    <string name="already_have_an_account_sign_ip">Already have an account? Sign in</string>
+    <string name="phone_desc_for_sign_up">Please enter your phone number and we will send you a verification code.</string>
+    <string name="email_desc_for_sign_up">Please enter your email address and we will send you a verification code.</string>
+    <string name="sign_up_with_email_address">Sign up with email address</string>
+    <string name="sign_up_with_phone_number">Sign up with phone number</string>
+    <string name="enter_full_name">Enter full name</string>
+    <string name="choose_date_of_birth">Choose date of birth</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="phone_number">Phone number</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="i_have_read_and_agree_with_privacy_policy_and_terms_conditions">I have read and agree with Privacy policy and Terms &amp; Conditions.</string>
+    <string name="terms_conditions">Terms &amp; Conditions.</string>
+    <string name="create_account">Create account</string>
+    <string name="please_enter_your_password">Please enter your password</string>
+    <string name="choose_date_of_birthday">Choose date of birthday</string>
+    <string name="save">Save</string>
+    <string name="resend_again">Resend again</string>
+    <string name="resend_in">Resend in</string>
+    <string name="please_read_terms_and_conditions">To continue, you should agree to Terms and Conditions and Privacy policy checkbox</string>
+    <string name="we_have_sent_verification_code_to_your_phone_number">We have sent verification code to $ phone number</string>
+    <string name="we_have_sent_verification_code_to_your_email">We have sent verification code to your email $</string>
+    <string name="enter_the_code">Enter the code</string>
+    <string name="verification">verification</string>
+
+    <!--    Personal information page string resources   -->
+    <string name="personal_information">Personal information</string>
+    <string name="delete_photo">Delete photo</string>
+    <string name="take_a_photo">Take a photo</string>
+    <string name="choose_from_gallery">Choose from gallery</string>
+    <string name="receive_code">Receive code</string>
+    <string name="full_name">Full name</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="email_address">Email address</string>
+    <string name="change_password">Change password</string>
+    <string name="current_password">Current password</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_new_password">Confirm new password</string>
+    <string name="login_information">Login information</string>
+    <string name="add">Add</string>
+    <string name="change">Change</string>
+    <string name="add_email_address">Add email address</string>
+    <string name="change_email_address">Change email address</string>
+    <string name="change_phone_number">Change phone number</string>
+    <string name="add_phone_number">Add phone number</string>
+
+    <!--    Addresses and add address page string resources   -->
+    <string name="add_address">Add address</string>
+    <string name="add_card">Add card</string>
+    <string name="addresses">Addresses</string>
+    <string name="set_as_default">Set as default</string>
+    <string name="make_default">Make default</string>
+    <string name="add_new_address">Add new address</string>
+    <string name="edit_address">Edit address</string>
+    <string name="delivery_address_information">Delivery address information</string>
+    <string name="delivery_address_title">Delivery address title</string>
+    <string name="enter_your_address">Enter your address</string>
+    <string name="address_">Address*</string>
+    <string name="apartment">Apartment</string>
+    <string name="entrance">Entrance</string>
+    <string name="floor">Floor</string>
+    <string name="additional_information">Additional information</string>
+    <string name="title">Title</string>
+    <string name="set_as_default_address">Set as default address</string>
+
+    <!--    Cards page string resources   -->
+    <string name="cards">Cards</string>
+
+    <!--    Notifications page string resources   -->
+    <string name="notifications">Notifications</string>
+
+
+    <!--    Order and Order details page string resources   -->
+    <string name="orders">Orders</string>
+    <string name="order_details">Order details</string>
+    <string name="recipient">Recipient:</string>
+    <string name="order_date">Order date:</string>
+    <string name="delivery_date">Delivery date:</string>
+    <string name="delivery_address">Delivery address:</string>
+    <string name="payment_method">Payment method:</string>
+    <string name="delivery_type">Delivery type:</string>
+    <string name="comment_">Comment:</string>
+    <string name="total">Total:</string>
+    <string name="standart_delivery">Standart delivery:</string>
+    <string name="subtotal">Subtotal:</string>
+    <string name="cancel_order">Cancel order</string>
+    <string name="rate">Rate</string>
+    <string name="leave_feedback">Leave feedback</string>
+    <string name="rate_our_service">Rate our service</string>
+    <string name="rate_the_product">Rate the product</string>
+    <string name="please_choose_the_reason_you_want_to_cancel_your_order">Please choose the reason you want to cancel your order.</string>
+    <string name="the_purchase_is_not_longer_needed">The purchase is not longer needed</string>
+    <string name="cancelled_to_reorder">Cancelled to reorder</string>
+
+    <!--    Requests and request details page string resources   -->
+    <string name="requests">Requests</string>
+    <string name="request_product">Request a product</string>
+
+    <!--    Create request page resources   -->
+    <string name="send_request">Send request</string>
+    <string name="select_category">Select category</string>
+    <string name="select_brand">Select Brand</string>
+    <string name="enter_product_name">Enter product name</string>
+    <string name="product_name">Product name</string>
+    <string name="description">Description</string>
+    <string name="if_you_have_any_questions_you_can_contact_us_at_the_phone_number_n_374_11_22_22_22">If you have any questions, you can contact us at the phone number\n+374 11 22 22 22</string>
+    <string name="to_submit_a_request_for_your_product_fill_out_the_form_below">To submit a request for your product fill out the form below.</string>
+    <string name="upload_photo">Upload photo</string>
+
+    <!--    Subscriptions and details page resources   -->
+    <string name="subscriptions">Subscriptions</string>
+
+    <!--    About us and About App page string resources   -->
+    <string name="about_app">About app</string>
+    <string name="about_us">About us</string>
+    <string name="rate_app">Rate app</string>
+    <string name="powered_by">Powered by</string>
+    <string name="version_of_the_app">Version of the app</string>
+    <string name="find_us_on_facebook">Find us on Facebook</string>
+    <string name="about_us_bottom_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \n\n . Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</string>
+    <string name="about_us_top_text">The “Grand Holding” name has been the warrant of the high quality of products and services from the very moment of its foundation. The company has been the biggest industrial tax-payer in the Republic of Armenia since 1997. Today “Grand Holding” is a big corporation with more than 9900 employees and with the aspiration to conquer higher peaks</string>
+    <string name="about_us_title">Who we are\nand what we do</string>
+
+    <!--    Privacy and terms page string resources   -->
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="terms_conditions_more">Terms &amp; Conditions</string>
+
+    <!--    FAQ page string resources   -->
+    <string name="faq">FAQ</string>
+    <string name="how_can_we_help_you">How can we help you?</string>
+    <string name="we_are_here_to_nhelp_you">we are here to\nhelp you</string>
+    <string name="results_not_found">Results not found</string>
+
+    <!--    News and events page and details page string resources   -->
+    <string name="news_and_events">News and events</string>
+
+    <!--    Contact us page string resources   -->
+    <string name="contact_us">Contact us</string>
+    <string name="let_s_collaborate">Let\'s collaborate.</string>
+    <string name="leave_message">Leave message</string>
+    <string name="message">Message*</string>
+    <string name="enter_email_or_phone_number">Enter email or phone number</string>
+    <string name="contact_information">Contact information*</string>
+    <string name="fill_out_the_form_below">Fill out the form below</string>
+    <string name="technical_issues">Technical issues</string>
+    <string name="select_the_topic">Select the topic</string>
+    <string name="grant_market_support_is_always_ready_to_help">Grant Market support is always ready to help.</string>
+    <string name="armenia_0061_yerevan_shahamiryanneri_st_22_building_shengavit_adm_district">Armenia, 0061, Yerevan Shahamiryanneri St., 22 Building (Shengavit adm. district)</string>
+    <string name="address">Address:</string>
+    <string name="info_grandmarketteam_am">info@grandmarketteam.am</string>
+    <string name="email_">Email:</string>
+    <string name="_374_99_11_22_33">+374 99 11 22 33</string>
+    <string name="phone_">Phone:</string>
+    <string name="full_name_">Full name*</string>
+    <string name="products">Products</string>
+    <string name="technical_support">Technical support</string>
+    <string name="collaboration">Collaboration</string>
+    <string name="advertising_proposal">Advertising proposal</string>
+    <string name="review">Review</string>
+    <string name="comments_and_suggestions">Comments and suggestions</string>
+
+
+    <!--    Settings page string resources   -->
+    <string name="settings">Settings</string>
+    <string name="language">Language</string>
+    <string name="get_notifications_about_your_order_and_subscriptions">Get notifications about your order and subscriptions.</string>
+    <string name="get_notifications_about_new_products_and_discounts">Get notifications about new products, and discounts.</string>
+    <string name="marketing_notifications">Marketing notifications</string>
+    <string name="email_notifications">Email notifications</string>
+    <string name="push_notifications">Push notifications</string>
+    <string name="select_the_language_supported_in_the_app_grant_market">Select the language supported in the app Grant Market</string>
+    <string name="frequently_asked_questions">Frequently asked questions</string>
+
+</resources>

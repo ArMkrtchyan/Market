@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme dark. -->
+    <style name="AppThemeDark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccentDark</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/background_color_dark</item>
+        <item name="android:windowBackground">@color/background_color_dark</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+
+        <!-- styles attributes-->
+        <item name="baseTextStyle">@style/BaseTextStyleDark</item>
+        <item name="NormalTextStyle">@style/NormalTextStyleDark</item>
+        <item name="HeaderTextStyle">@style/HeaderTextStyleDark</item>
+        <item name="HeaderBlueTextStyle">@style/HeaderBlueTextStyleDark</item>
+        <item name="HeaderBlackTextStyle">@style/HeaderBlueTextStyleDark</item>
+        <item name="DescriptionTextStyle">@style/DescriptionTextStyleDark</item>
+        <item name="TitleTextStyle">@style/TitleTextStyleDark</item>
+        <item name="ChooseLanguageStyle">@style/ChooseLanguageStyleDark</item>
+        <item name="ButtonStyle">@style/ButtonStyleDark</item>
+        <item name="InputStyle">@style/InputStyleDark</item>
+        <item name="MyRadioButton">@style/MyRadioButtonDark</item>
+
+        <!-- Regular text styles attributes-->
+        <item name="Regular12BlackStyle">@style/Regular12BlackStyleDark</item>
+        <item name="Regular12BlueStyle">@style/Regular12BlueStyleDark</item>
+        <item name="Regular14BlackStyle">@style/Regular14BlackStyleDark</item>
+        <item name="Regular14BlueStyle">@style/Regular14BlueStyleDark</item>
+        <item name="Regular16BlackStyle">@style/Regular16BlackStyleDark</item>
+        <item name="Regular16BlueStyle">@style/Regular16BlueStyleDark</item>
+        <item name="Regular18BlackStyle">@style/Regular18BlackStyleDark</item>
+        <item name="Regular18BlueStyle">@style/Regular18BlueStyleDark</item>
+        <item name="Regular20BlackStyle">@style/Regular20BlackStyleDark</item>
+        <item name="Regular20BlueStyle">@style/Regular20BlueStyleDark</item>
+
+        <!-- Medium text styles attributes-->
+        <item name="Medium12BlackStyle">@style/Medium12BlackStyleDark</item>
+        <item name="Medium12BlueStyle">@style/Medium12BlueStyleDark</item>
+        <item name="Medium14BlackStyle">@style/Medium14BlackStyleDark</item>
+        <item name="Medium14BlueStyle">@style/Medium14BlueStyleDark</item>
+        <item name="Medium16BlackStyle">@style/Medium16BlackStyleDark</item>
+        <item name="Medium16BlueStyle">@style/Medium16BlueStyleDark</item>
+        <item name="Medium18BlackStyle">@style/Medium18BlackStyleDark</item>
+        <item name="Medium18BlueStyle">@style/Medium18BlueStyleDark</item>
+        <item name="Medium20BlackStyle">@style/Medium20BlackStyleDark</item>
+        <item name="Medium20BlueStyle">@style/Medium20BlueStyleDark</item>
+
+        <!-- Bold text styles itattributesemibutes-->
+        <item name="Bold14BlackStyle">@style/Bold14BlackStyleDark</item>
+        <item name="Bold14BlueStyle">@style/Bold14BlueStyleDark</item>
+        <item name="Bold16BlackStyle">@style/Bold16BlackStyleDark</item>
+        <item name="Bold16BlueStyle">@style/Bold16BlueStyleDark</item>
+        <item name="Bold18BlackStyle">@style/Bold18BlackStyleDark</item>
+        <item name="Bold18BlueStyle">@style/Bold18BlueStyleDark</item>
+        <item name="Bold20BlackStyle">@style/Bold20BlackStyleDark</item>
+        <item name="Bold20BlueStyle">@style/Bold20BlueStyleDark</item>
+        <item name="Bold22BlackStyle">@style/Bold22BlackStyleDark</item>
+        <item name="Bold22BlueStyle">@style/Bold22BlueStyleDark</item>
+
+        <!-- divider's attributes-->
+        <item name="dividerBackground">@color/divider_color_dark</item>
+        <item name="WindowBackgroundColor">@color/background_color_dark</item>
+        <item name="CardBackgroundColor">@color/card_background_color_dark</item>
+    </style>
+
+    <style name="BaseTextStyleDark">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/hint_text_color_dark</item>
+        <item name="android:fontFamily">@font/regular</item>
+    </style>
+
+
+    <style name="NormalTextStyleDark" parent="BaseTextStyleDark">
+        <item name="android:textSize">@dimen/text_size_4</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+
+    <style name="HeaderTextStyleDark" parent="BaseTextStyleDark">
+        <item name="android:textSize">@dimen/text_size_5</item>
+    </style>
+
+
+    <style name="HeaderBlackTextStyleLight" parent="BaseTextStyleLight">
+        <item name="android:textSize">@dimen/text_size_5</item>
+        <item name="android:textColor">@color/header_text_color_light</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+
+    <style name="HeaderBlueTextStyleDark" parent="BaseTextStyleDark">
+        <item name="android:textSize">@dimen/text_size_5</item>
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+
+    <style name="HeaderBlackTextStyleDark" parent="BaseTextStyleDark">
+        <item name="android:textSize">@dimen/text_size_5</item>
+        <item name="android:textColor">@color/header_text_color_dark</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+
+
+    <style name="DescriptionTextStyleDark" parent="BaseTextStyleDark">
+        <item name="android:textSize">@dimen/text_size_3</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+
+    <style name="TitleTextStyleDark" parent="BaseTextStyleDark">
+        <item name="android:textSize">@dimen/text_size_5</item>
+    </style>
+
+    <style name="PrefixAppearance" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textSize">@dimen/text_size_4</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+
+
+    <style name="ChooseLanguageStyleDark" parent="BaseTextStyleDark">
+        <item name="android:textSize">@dimen/text_size_3.5</item>
+        <item name="android:textColor">@color/header_text_color_dark</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/view_size_3</item>
+    </style>
+
+
+    <style name="ButtonStyleDark" parent="BaseTextStyleDark">
+        <item name="android:textSize">@dimen/text_size_4</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/ripple_gradient_rounded_25</item>
+    </style>
+
+
+    <style name="InputStyleDark">
+        <item name="android:textSize">@dimen/text_size_4</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColorHint">#80000000</item>
+        <item name="android:padding">@dimen/view_size_1</item>
+        <item name="android:background">@drawable/background_rounded_4_bordered</item>
+    </style>
+
+    <style name="NumberPicker">
+        <item name="android:colorControlNormal">@color/hint_text_color_light</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+    </style>
+
+    <style name="NumberPickerSelected">
+        <item name="android:colorControlNormal">@color/hint_text_color_light</item>
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+    </style>
+
+
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_bottom_sheet_dialog</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="RatingBarStyle" parent="Widget.AppCompat.RatingBar.Indicator">
+        <item name="android:isIndicator">false</item>
+    </style>
+
+    <style name="MyRadioButtonDark" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+</resources>

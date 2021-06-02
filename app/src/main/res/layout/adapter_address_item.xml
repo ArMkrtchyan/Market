@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="address"
+            type="com.armboldmind.grandmarket.data.models.domain.Address" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/view_size_3"
+            android:layout_marginTop="@dimen/view_size_3"
+            android:layout_marginEnd="@dimen/view_size_3"
+            android:background="@{address.defaultForDelivery ? @drawable/card_default_background_rounded_4_bordered : @drawable/card_background_rounded_4_bordered, default = @drawable/card_background_rounded_4_bordered}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="2.1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/address_title"
+                style="?attr/Medium20BlueStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/view_size_3"
+                android:text='@{address.title}'
+                android:visibility="@{TextUtils.isEmpty(address.title) ? View.GONE : View.VISIBLE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Address title" />
+
+            <TextView
+                android:id="@+id/address_name"
+                style="?attr/Medium16BlackStyle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/view_size_3"
+                android:layout_marginTop="@dimen/view_size_2"
+                android:layout_marginBottom="@dimen/view_size_3"
+                android:ellipsize="end"
+                android:text='@{String.format("%s\n%s",address.region,address.addressName)}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/address_title"
+                app:layout_constraintWidth_percent="0.48"
+                tools:text="Armenia, Yerevan\nstr. Estonakan, 12/1 kldmdlks dsmckdsmc dklmcdlsmc lkdsmckldmsc lkdsmcklds dlcmlksmd" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_address_illustration"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.48"
+                tools:ignore="ContentDescription" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

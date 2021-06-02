@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<style name="Regular12StyleDark" parent="BaseRegularStyle">
+        <item name="android:textSize">@dimen/text_size_2</item>
+    </style>
+
+    <style name="Regular12BlackStyleDark" parent="Regular12StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Regular12BlueStyleDark" parent="Regular12StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+    <style name="Regular14StyleDark" parent="BaseRegularStyle">
+        <item name="android:textSize">@dimen/text_size_3</item>
+    </style>
+
+    <style name="Regular14BlackStyleDark" parent="Regular14StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Regular14BlueStyleDark" parent="Regular14StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+    <style name="Regular16StyleDark" parent="BaseRegularStyle">
+        <item name="android:textSize">@dimen/text_size_4</item>
+    </style>
+
+    <style name="Regular16BlackStyleDark" parent="Regular16StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Regular16BlueStyleDark" parent="Regular16StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+
+    <style name="Regular18StyleDark" parent="BaseRegularStyle">
+        <item name="android:textSize">@dimen/text_size_5</item>
+    </style>
+
+    <style name="Regular18BlackStyleDark" parent="Regular18StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Regular18BlueStyleDark" parent="Regular18StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+    <style name="Regular20StyleDark" parent="BaseRegularStyle">
+        <item name="android:textSize">@dimen/text_size_6</item>
+    </style>
+
+    <style name="Regular20BlackStyleDark" parent="Regular20StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Regular20BlueStyleDark" parent="Regular20StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+</resources>

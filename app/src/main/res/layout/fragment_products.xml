@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.products.ProductsFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/CardBackgroundColor"
+            android:elevation="3dp"
+            app:navigationIcon="@drawable/ic_back">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    style="?attr/Bold18BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@id/sort"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="2" />
+
+                <ImageView
+                    android:id="@+id/sort"
+                    android:layout_width="wrap_content"
+                    android:paddingEnd="@dimen/view_size_1"
+                    android:paddingStart="@dimen/view_size_1"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_toStartOf="@id/filters"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_sort" />
+
+                <ImageView
+                    android:id="@+id/filters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="@dimen/view_size_1"
+                    android:paddingStart="6dp"
+                    android:layout_marginEnd="@dimen/view_size_2"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_filter" />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/products"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/view_size_1"
+            android:paddingTop="@dimen/view_size_1"
+            android:paddingEnd="@dimen/view_size_1"
+            android:paddingBottom="100dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/adapter_favorites_item" />
+
+        <com.armboldmind.grandmarket.shared.customview.StateLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="2dp" />
+    </RelativeLayout>
+</layout>

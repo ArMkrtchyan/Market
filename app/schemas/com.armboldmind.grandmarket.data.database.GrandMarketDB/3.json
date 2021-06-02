@@ -1,0 +1,1909 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "b0a91fae547e7abfb9cc22169d378a9b",
+    "entities": [
+      {
+        "tableName": "products",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "notifications",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT, `message` TEXT, `sendDate` INTEGER, `action` INTEGER, `seen` INTEGER, `pageModel` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "message",
+            "columnName": "message",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sendDate",
+            "columnName": "sendDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "action",
+            "columnName": "action",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "seen",
+            "columnName": "seen",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pageModel",
+            "columnName": "pageModel",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Keys",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cancel` TEXT NOT NULL DEFAULT 'cancel', `next` TEXT NOT NULL DEFAULT 'next', `save` TEXT NOT NULL DEFAULT 'save', `close` TEXT NOT NULL DEFAULT 'close', `yes` TEXT NOT NULL DEFAULT 'yes', `no` TEXT NOT NULL DEFAULT 'no', `done` TEXT NOT NULL DEFAULT 'done', `confirm` TEXT NOT NULL DEFAULT 'confirm', `retry` TEXT NOT NULL DEFAULT 'retry', `search` TEXT NOT NULL DEFAULT 'search', `edit` TEXT NOT NULL DEFAULT 'edit', `delete` TEXT NOT NULL DEFAULT 'delete', `other` TEXT NOT NULL DEFAULT 'other', `add` TEXT NOT NULL DEFAULT 'add', `change` TEXT NOT NULL DEFAULT 'change', `choose` TEXT NOT NULL DEFAULT 'choose', `no_favorites` TEXT NOT NULL DEFAULT 'no_favorites', `no_products` TEXT NOT NULL DEFAULT 'no_products', `no_notifications` TEXT NOT NULL DEFAULT 'no_notifications', `no_orders` TEXT NOT NULL DEFAULT 'no_orders', `no_cards` TEXT NOT NULL DEFAULT 'no_cards', `no_addresses` TEXT NOT NULL DEFAULT 'no_addresses', `no_basket` TEXT NOT NULL DEFAULT 'no_basket', `no_requests` TEXT NOT NULL DEFAULT 'no_requests', `no_subscriptions` TEXT NOT NULL DEFAULT 'no_subscriptions', `default_error_message` TEXT NOT NULL DEFAULT 'default_error_message', `default_network_error_title` TEXT NOT NULL DEFAULT 'default_network_error_title', `default_network_error_description` TEXT NOT NULL DEFAULT 'default_network_error_description', `default_server_error_title` TEXT NOT NULL DEFAULT 'default_server_error_title', `default_server_error_description` TEXT NOT NULL DEFAULT 'default_server_error_description', `server_error` TEXT NOT NULL DEFAULT 'server_error', `network_error` TEXT NOT NULL DEFAULT 'network_error', `incorrect_fields` TEXT NOT NULL DEFAULT 'incorrect_fields', `enter_verification_code` TEXT NOT NULL DEFAULT 'enter_verification_code', `incorrect_password` TEXT NOT NULL DEFAULT 'incorrect_password', `passwords_dont_match` TEXT NOT NULL DEFAULT 'passwords_dont_match', `incorrect_email` TEXT NOT NULL DEFAULT 'incorrect_email', `incorrect_phone` TEXT NOT NULL DEFAULT 'incorrect_phone', `wrong_code_message` TEXT NOT NULL DEFAULT 'wrong_code_message', `email_or_phone_required` TEXT NOT NULL DEFAULT 'email_or_phone_required', `to_many_request_message` TEXT NOT NULL DEFAULT 'to_many_request_message', `account_with_phone_exist` TEXT NOT NULL DEFAULT 'account_with_phone_exist', `please_read_terms_and_conditions` TEXT NOT NULL DEFAULT 'please_read_terms_and_conditions', `gallery_permission_denied` TEXT NOT NULL DEFAULT 'gallery_permission_denied', `camera_permission_denied` TEXT NOT NULL DEFAULT 'camera_permission_denied', `photo_already_selected` TEXT NOT NULL DEFAULT 'photo_already_selected', `info_changed_successfully` TEXT NOT NULL DEFAULT 'info_changed_successfully', `password_changed_successfully` TEXT NOT NULL DEFAULT 'password_changed_successfully', `photo_added_successfully` TEXT NOT NULL DEFAULT 'photo_added_successfully', `photo_changed_successfully` TEXT NOT NULL DEFAULT 'photo_changed_successfully', `photo_deleted_successfully` TEXT NOT NULL DEFAULT 'photo_deleted_successfully', `verification_code_required` TEXT NOT NULL DEFAULT 'verification_code_required', `your_message_was_succesfuly_sent` TEXT NOT NULL DEFAULT 'your_message_was_succesfuly_sent', `thank_you` TEXT NOT NULL DEFAULT 'thank_you', `sign_out` TEXT NOT NULL DEFAULT 'sign_out', `sign_out_popup_text` TEXT NOT NULL DEFAULT 'sign_out_popup_text', `delete_card_title` TEXT NOT NULL DEFAULT 'delete_card_title', `delete_card_description` TEXT NOT NULL DEFAULT 'delete_card_description', `delete_photo_title` TEXT NOT NULL DEFAULT 'delete_photo_title', `delete_photo_description` TEXT NOT NULL DEFAULT 'delete_photo_description', `delete_address_title` TEXT NOT NULL DEFAULT 'delete_address_title', `delete_address_description` TEXT NOT NULL DEFAULT 'delete_address_description', `default_address_title` TEXT NOT NULL DEFAULT 'default_address_title', `default_address_description` TEXT NOT NULL DEFAULT 'default_address_description', `request_created_description` TEXT NOT NULL DEFAULT 'request_created_description', `account_with_phone_not_exist` TEXT NOT NULL DEFAULT 'account_with_phone_not_exist', `account_with_email_not_exist` TEXT NOT NULL DEFAULT 'account_with_email_not_exist', `request_here` TEXT NOT NULL DEFAULT 'request_here', `looking_for_product` TEXT NOT NULL DEFAULT 'looking_for_product', `what_are_you_looking_for` TEXT NOT NULL DEFAULT 'what_are_you_looking_for', `categories` TEXT NOT NULL DEFAULT 'categories', `all_categories_title` TEXT NOT NULL DEFAULT 'all_categories_title', `filter` TEXT NOT NULL DEFAULT 'filter', `reset` TEXT NOT NULL DEFAULT 'reset', `price_range` TEXT NOT NULL DEFAULT 'price_range', `color` TEXT NOT NULL DEFAULT 'color', `size` TEXT NOT NULL DEFAULT 'size', `view_items` TEXT NOT NULL DEFAULT 'view_items', `quantity` TEXT NOT NULL DEFAULT 'quantity', `products_related_title` TEXT NOT NULL DEFAULT 'products_related_title', `subscribe` TEXT NOT NULL DEFAULT 'subscribe', `add_to_basket` TEXT NOT NULL DEFAULT 'add_to_basket', `basket` TEXT NOT NULL DEFAULT 'basket', `favorites` TEXT NOT NULL DEFAULT 'favorites', `welcome_title` TEXT NOT NULL DEFAULT 'welcome_title', `welcome_description` TEXT NOT NULL DEFAULT 'welcome_description', `sign_in` TEXT NOT NULL DEFAULT 'sign_in', `sign_in_description` TEXT NOT NULL DEFAULT 'sign_in_description', `email_or_phone_number` TEXT NOT NULL DEFAULT 'email_or_phone_number', `password` TEXT NOT NULL DEFAULT 'password', `forgot_password` TEXT NOT NULL DEFAULT 'forgot_password', `forgot_password_title` TEXT NOT NULL DEFAULT 'forgot_password_title', `forgot_password_description` TEXT NOT NULL DEFAULT 'forgot_password_description', `don_t_have_an_account_sign_up` TEXT NOT NULL DEFAULT 'don_t_have_an_account_sign_up', `sign_up` TEXT NOT NULL DEFAULT 'sign_up', `already_have_an_account_sign_in` TEXT NOT NULL DEFAULT 'already_have_an_account_sign_in', `phone_desc_for_sign_up` TEXT NOT NULL DEFAULT 'phone_desc_for_sign_up', `email_desc_for_sign_up` TEXT NOT NULL DEFAULT 'email_desc_for_sign_up', `sign_up_with_email_address` TEXT NOT NULL DEFAULT 'sign_up_with_email_address', `sign_up_with_phone_number` TEXT NOT NULL DEFAULT 'sign_up_with_phone_number', `enter_full_name` TEXT NOT NULL DEFAULT 'enter_full_name', `choose_date_of_birth` TEXT NOT NULL DEFAULT 'choose_date_of_birth', `enter_email_address` TEXT NOT NULL DEFAULT 'enter_email_address', `repeat_password` TEXT NOT NULL DEFAULT 'repeat_password', `confirm_terms_and_policy` TEXT NOT NULL DEFAULT 'confirm_terms_and_policy', `create_account` TEXT NOT NULL DEFAULT 'create_account', `please_enter_your_password` TEXT NOT NULL DEFAULT 'please_enter_your_password', `create_password` TEXT NOT NULL DEFAULT 'create_password', `resend_again` TEXT NOT NULL DEFAULT 'resend_again', `resend_in` TEXT NOT NULL DEFAULT 'resend_in', `sent_code_to_phone` TEXT NOT NULL DEFAULT 'sent_code_to_phone', `sent_code_to_email` TEXT NOT NULL DEFAULT 'sent_code_to_email', `enter_the_code` TEXT NOT NULL DEFAULT 'enter_the_code', `full_name` TEXT NOT NULL DEFAULT 'full_name', `verification` TEXT NOT NULL DEFAULT 'verification', `phone_number` TEXT NOT NULL DEFAULT 'phone_number', `phone_` TEXT NOT NULL DEFAULT 'phone_', `send` TEXT NOT NULL DEFAULT 'send', `email_` TEXT NOT NULL DEFAULT 'email_', `date_of_birth` TEXT NOT NULL DEFAULT 'date_of_birth', `enter_email_or_phone_number` TEXT NOT NULL DEFAULT 'enter_email_or_phone_number', `verify` TEXT NOT NULL DEFAULT 'verify', `forgot_password_` TEXT NOT NULL DEFAULT 'forgot_password_', `email_address` TEXT NOT NULL DEFAULT 'email_address', `confirm_new_password` TEXT NOT NULL DEFAULT 'confirm_new_password', `change_password` TEXT NOT NULL DEFAULT 'change_password', `personal_information` TEXT NOT NULL DEFAULT 'personal_information', `login_information` TEXT NOT NULL DEFAULT 'login_information', `current_password` TEXT NOT NULL DEFAULT 'current_password', `delete_photo` TEXT NOT NULL DEFAULT 'delete_photo', `take_a_photo` TEXT NOT NULL DEFAULT 'take_a_photo', `choose_from_gallery` TEXT NOT NULL DEFAULT 'choose_from_gallery', `receive_code` TEXT NOT NULL DEFAULT 'receive_code', `new_password` TEXT NOT NULL DEFAULT 'new_password', `add_email_address` TEXT NOT NULL DEFAULT 'add_email_address', `change_email_address` TEXT NOT NULL DEFAULT 'change_email_address', `change_phone_number` TEXT NOT NULL DEFAULT 'change_phone_number', `add_phone_number` TEXT NOT NULL DEFAULT 'add_phone_number', `addresses` TEXT NOT NULL DEFAULT 'addresses', `address_` TEXT NOT NULL DEFAULT 'address_', `add_address` TEXT NOT NULL DEFAULT 'add_address', `set_as_default` TEXT NOT NULL DEFAULT 'set_as_default', `make_default` TEXT NOT NULL DEFAULT 'make_default', `add_new_address` TEXT NOT NULL DEFAULT 'add_new_address', `edit_address` TEXT NOT NULL DEFAULT 'edit_address', `delivery_address_information` TEXT NOT NULL DEFAULT 'delivery_address_information', `delivery_address_title` TEXT NOT NULL DEFAULT 'delivery_address_title', `enter_your_address` TEXT NOT NULL DEFAULT 'enter_your_address', `address__` TEXT NOT NULL DEFAULT 'address__', `apartment` TEXT NOT NULL DEFAULT 'apartment', `entrance` TEXT NOT NULL DEFAULT 'entrance', `floor` TEXT NOT NULL DEFAULT 'floor', `additional_information` TEXT NOT NULL DEFAULT 'additional_information', `title` TEXT NOT NULL DEFAULT 'title', `set_as_default_address` TEXT NOT NULL DEFAULT 'set_as_default_address', `comment` TEXT NOT NULL DEFAULT 'comment', `cards` TEXT NOT NULL DEFAULT 'cards', `add_new_card` TEXT NOT NULL DEFAULT 'add_new_card', `add_card` TEXT NOT NULL DEFAULT 'add_card', `notifications` TEXT NOT NULL DEFAULT 'notifications', `order_history` TEXT NOT NULL DEFAULT 'order_history', `orders` TEXT NOT NULL DEFAULT 'orders', `requests` TEXT NOT NULL DEFAULT 'requests', `request_product` TEXT NOT NULL DEFAULT 'request_product', `categories_` TEXT NOT NULL DEFAULT 'categories_', `brand_` TEXT NOT NULL DEFAULT 'brand_', `date_` TEXT NOT NULL DEFAULT 'date_', `request_info_description` TEXT NOT NULL DEFAULT 'request_info_description', `request_info_title` TEXT NOT NULL DEFAULT 'request_info_title', `request_info_hint_1` TEXT NOT NULL DEFAULT 'request_info_hint_1', `request_info_hint_2` TEXT NOT NULL DEFAULT 'request_info_hint_2', `request_info_hint_3` TEXT NOT NULL DEFAULT 'request_info_hint_3', `request_now` TEXT NOT NULL DEFAULT 'request_now', `request_a_product_title_1` TEXT NOT NULL DEFAULT 'request_a_product_title_1', `request_a_product_title_2` TEXT NOT NULL DEFAULT 'request_a_product_title_2', `contact_information__` TEXT NOT NULL DEFAULT 'contact_information__', `select_category__` TEXT NOT NULL DEFAULT 'select_category__', `select_category` TEXT NOT NULL DEFAULT 'select_category', `select_brand__` TEXT NOT NULL DEFAULT 'select_brand__', `select_brand` TEXT NOT NULL DEFAULT 'select_brand', `product_name__` TEXT NOT NULL DEFAULT 'product_name__', `enter_product_name` TEXT NOT NULL DEFAULT 'enter_product_name', `description__` TEXT NOT NULL DEFAULT 'description__', `description` TEXT NOT NULL DEFAULT 'description', `upload_photo` TEXT NOT NULL DEFAULT 'upload_photo', `send_request` TEXT NOT NULL DEFAULT 'send_request', `subscriptions` TEXT NOT NULL DEFAULT 'subscriptions', `about_us` TEXT NOT NULL DEFAULT 'about_us', `about_app` TEXT NOT NULL DEFAULT 'about_app', `rate_app` TEXT NOT NULL DEFAULT 'rate_app', `powered_by` TEXT NOT NULL DEFAULT 'powered_by', `version_of_the_app` TEXT NOT NULL DEFAULT 'version_of_the_app', `find_us_on_facebook` TEXT NOT NULL DEFAULT 'find_us_on_facebook', `about_us_bottom_text` TEXT NOT NULL DEFAULT 'about_us_bottom_text', `about_us_top_text` TEXT NOT NULL DEFAULT 'about_us_top_text', `about_us_title` TEXT NOT NULL DEFAULT 'about_us_title', `privacy_police` TEXT NOT NULL DEFAULT 'privacy_police', `terms_and_conditions` TEXT NOT NULL DEFAULT 'terms_and_conditions', `frequently_asked_questions` TEXT NOT NULL DEFAULT 'frequently_asked_questions', `faq_title` TEXT NOT NULL DEFAULT 'faq_title', `faq` TEXT NOT NULL DEFAULT 'faq', `faq_placeholder` TEXT NOT NULL DEFAULT 'faq_placeholder', `faq_description` TEXT NOT NULL DEFAULT 'faq_description', `we_are_here_to_help_you` TEXT NOT NULL DEFAULT 'we_are_here_to_help_you', `email_value` TEXT NOT NULL DEFAULT 'email_value', `news_and_events` TEXT NOT NULL DEFAULT 'news_and_events', `select_the_topic` TEXT NOT NULL DEFAULT 'select_the_topic', `select_topic` TEXT NOT NULL DEFAULT 'select_topic', `leave_your_message` TEXT NOT NULL DEFAULT 'leave_your_message', `contact_information` TEXT NOT NULL DEFAULT 'contact_information', `contact_us` TEXT NOT NULL DEFAULT 'contact_us', `let_s_collaborate` TEXT NOT NULL DEFAULT 'let_s_collaborate', `message__` TEXT NOT NULL DEFAULT 'message__', `fill_out_the_form_below` TEXT NOT NULL DEFAULT 'fill_out_the_form_below', `address_value` TEXT NOT NULL DEFAULT 'address_value', `phone_value` TEXT NOT NULL DEFAULT 'phone_value', `grant_market_help` TEXT NOT NULL DEFAULT 'grant_market_help', `full_name__` TEXT NOT NULL DEFAULT 'full_name__', `leave_message` TEXT NOT NULL DEFAULT 'leave_message', `select_the_topic_` TEXT NOT NULL DEFAULT 'select_the_topic_', `products` TEXT NOT NULL DEFAULT 'products', `technical_support` TEXT NOT NULL DEFAULT 'technical_support', `collaboration` TEXT NOT NULL DEFAULT 'collaboration', `advertising_proposal` TEXT NOT NULL DEFAULT 'advertising_proposal', `review` TEXT NOT NULL DEFAULT 'review', `comments_and_suggestions` TEXT NOT NULL DEFAULT 'comments_and_suggestions', `settings` TEXT NOT NULL DEFAULT 'settings', `language` TEXT NOT NULL DEFAULT 'language', `notifications_about_subscriptions` TEXT NOT NULL DEFAULT 'notifications_about_subscriptions', `notifications_about__discounts` TEXT NOT NULL DEFAULT 'notifications_about__discounts', `marketing_notifications` TEXT NOT NULL DEFAULT 'marketing_notifications', `email_notifications` TEXT NOT NULL DEFAULT 'email_notifications', `push_notifications` TEXT NOT NULL DEFAULT 'push_notifications', `select_the_app_language` TEXT NOT NULL DEFAULT 'select_the_app_language', `brands` TEXT NOT NULL DEFAULT 'brands', `new_products` TEXT NOT NULL DEFAULT 'new_products', `last_name` TEXT NOT NULL DEFAULT 'last_name', `message` TEXT NOT NULL DEFAULT 'message', `home_page_1_text` TEXT NOT NULL DEFAULT 'home_page_1_text', `catalog` TEXT NOT NULL DEFAULT 'catalog', `learn_more` TEXT NOT NULL DEFAULT 'learn_more', `filter_by` TEXT NOT NULL DEFAULT 'filter_by', `card_list` TEXT NOT NULL DEFAULT 'card_list', `home_page_2_text` TEXT NOT NULL DEFAULT 'home_page_2_text', `copy_right_text` TEXT NOT NULL DEFAULT 'copy_right_text', `discounts` TEXT NOT NULL DEFAULT 'discounts', `price` TEXT NOT NULL DEFAULT 'price', `newest` TEXT NOT NULL DEFAULT 'newest', `select_your_display_language` TEXT NOT NULL DEFAULT 'select_your_display_language', `new_arrivals` TEXT NOT NULL DEFAULT 'new_arrivals', `filter_by_price` TEXT NOT NULL DEFAULT 'filter_by_price', `name` TEXT NOT NULL DEFAULT 'name', `bestsellers` TEXT NOT NULL DEFAULT 'bestsellers', `follow_us` TEXT NOT NULL DEFAULT 'follow_us', `sort_by` TEXT NOT NULL DEFAULT 'sort_by', `view_all` TEXT NOT NULL DEFAULT 'view_all', `company` TEXT NOT NULL DEFAULT 'company')",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cancel",
+            "columnName": "cancel",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'cancel'"
+          },
+          {
+            "fieldPath": "next",
+            "columnName": "next",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'next'"
+          },
+          {
+            "fieldPath": "save",
+            "columnName": "save",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'save'"
+          },
+          {
+            "fieldPath": "close",
+            "columnName": "close",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'close'"
+          },
+          {
+            "fieldPath": "yes",
+            "columnName": "yes",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'yes'"
+          },
+          {
+            "fieldPath": "no",
+            "columnName": "no",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'no'"
+          },
+          {
+            "fieldPath": "done",
+            "columnName": "done",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'done'"
+          },
+          {
+            "fieldPath": "confirm",
+            "columnName": "confirm",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'confirm'"
+          },
+          {
+            "fieldPath": "retry",
+            "columnName": "retry",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'retry'"
+          },
+          {
+            "fieldPath": "search",
+            "columnName": "search",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'search'"
+          },
+          {
+            "fieldPath": "edit",
+            "columnName": "edit",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'edit'"
+          },
+          {
+            "fieldPath": "delete",
+            "columnName": "delete",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'delete'"
+          },
+          {
+            "fieldPath": "other",
+            "columnName": "other",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'other'"
+          },
+          {
+            "fieldPath": "add",
+            "columnName": "add",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'add'"
+          },
+          {
+            "fieldPath": "change",
+            "columnName": "change",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'change'"
+          },
+          {
+            "fieldPath": "choose",
+            "columnName": "choose",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'choose'"
+          },
+          {
+            "fieldPath": "no_favorites",
+            "columnName": "no_favorites",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'no_favorites'"
+          },
+          {
+            "fieldPath": "no_products",
+            "columnName": "no_products",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'no_products'"
+          },
+          {
+            "fieldPath": "no_notifications",
+            "columnName": "no_notifications",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'no_notifications'"
+          },
+          {
+            "fieldPath": "no_orders",
+            "columnName": "no_orders",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'no_orders'"
+          },
+          {
+            "fieldPath": "no_cards",
+            "columnName": "no_cards",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'no_cards'"
+          },
+          {
+            "fieldPath": "no_addresses",
+            "columnName": "no_addresses",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'no_addresses'"
+          },
+          {
+            "fieldPath": "no_basket",
+            "columnName": "no_basket",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'no_basket'"
+          },
+          {
+            "fieldPath": "no_requests",
+            "columnName": "no_requests",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'no_requests'"
+          },
+          {
+            "fieldPath": "no_subscriptions",
+            "columnName": "no_subscriptions",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'no_subscriptions'"
+          },
+          {
+            "fieldPath": "default_error_message",
+            "columnName": "default_error_message",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'default_error_message'"
+          },
+          {
+            "fieldPath": "default_network_error_title",
+            "columnName": "default_network_error_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'default_network_error_title'"
+          },
+          {
+            "fieldPath": "default_network_error_description",
+            "columnName": "default_network_error_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'default_network_error_description'"
+          },
+          {
+            "fieldPath": "default_server_error_title",
+            "columnName": "default_server_error_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'default_server_error_title'"
+          },
+          {
+            "fieldPath": "default_server_error_description",
+            "columnName": "default_server_error_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'default_server_error_description'"
+          },
+          {
+            "fieldPath": "server_error",
+            "columnName": "server_error",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'server_error'"
+          },
+          {
+            "fieldPath": "network_error",
+            "columnName": "network_error",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'network_error'"
+          },
+          {
+            "fieldPath": "incorrect_fields",
+            "columnName": "incorrect_fields",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'incorrect_fields'"
+          },
+          {
+            "fieldPath": "enter_verification_code",
+            "columnName": "enter_verification_code",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'enter_verification_code'"
+          },
+          {
+            "fieldPath": "incorrect_password",
+            "columnName": "incorrect_password",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'incorrect_password'"
+          },
+          {
+            "fieldPath": "passwords_dont_match",
+            "columnName": "passwords_dont_match",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'passwords_dont_match'"
+          },
+          {
+            "fieldPath": "incorrect_email",
+            "columnName": "incorrect_email",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'incorrect_email'"
+          },
+          {
+            "fieldPath": "incorrect_phone",
+            "columnName": "incorrect_phone",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'incorrect_phone'"
+          },
+          {
+            "fieldPath": "wrong_code_message",
+            "columnName": "wrong_code_message",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'wrong_code_message'"
+          },
+          {
+            "fieldPath": "email_or_phone_required",
+            "columnName": "email_or_phone_required",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'email_or_phone_required'"
+          },
+          {
+            "fieldPath": "to_many_request_message",
+            "columnName": "to_many_request_message",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'to_many_request_message'"
+          },
+          {
+            "fieldPath": "account_with_phone_exist",
+            "columnName": "account_with_phone_exist",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'account_with_phone_exist'"
+          },
+          {
+            "fieldPath": "please_read_terms_and_conditions",
+            "columnName": "please_read_terms_and_conditions",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'please_read_terms_and_conditions'"
+          },
+          {
+            "fieldPath": "gallery_permission_denied",
+            "columnName": "gallery_permission_denied",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'gallery_permission_denied'"
+          },
+          {
+            "fieldPath": "camera_permission_denied",
+            "columnName": "camera_permission_denied",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'camera_permission_denied'"
+          },
+          {
+            "fieldPath": "photo_already_selected",
+            "columnName": "photo_already_selected",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'photo_already_selected'"
+          },
+          {
+            "fieldPath": "info_changed_successfully",
+            "columnName": "info_changed_successfully",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'info_changed_successfully'"
+          },
+          {
+            "fieldPath": "password_changed_successfully",
+            "columnName": "password_changed_successfully",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'password_changed_successfully'"
+          },
+          {
+            "fieldPath": "photo_added_successfully",
+            "columnName": "photo_added_successfully",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'photo_added_successfully'"
+          },
+          {
+            "fieldPath": "photo_changed_successfully",
+            "columnName": "photo_changed_successfully",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'photo_changed_successfully'"
+          },
+          {
+            "fieldPath": "photo_deleted_successfully",
+            "columnName": "photo_deleted_successfully",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'photo_deleted_successfully'"
+          },
+          {
+            "fieldPath": "verification_code_required",
+            "columnName": "verification_code_required",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'verification_code_required'"
+          },
+          {
+            "fieldPath": "your_message_was_succesfuly_sent",
+            "columnName": "your_message_was_succesfuly_sent",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'your_message_was_succesfuly_sent'"
+          },
+          {
+            "fieldPath": "thank_you",
+            "columnName": "thank_you",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'thank_you'"
+          },
+          {
+            "fieldPath": "sign_out",
+            "columnName": "sign_out",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'sign_out'"
+          },
+          {
+            "fieldPath": "sign_out_popup_text",
+            "columnName": "sign_out_popup_text",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'sign_out_popup_text'"
+          },
+          {
+            "fieldPath": "delete_card_title",
+            "columnName": "delete_card_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'delete_card_title'"
+          },
+          {
+            "fieldPath": "delete_card_description",
+            "columnName": "delete_card_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'delete_card_description'"
+          },
+          {
+            "fieldPath": "delete_photo_title",
+            "columnName": "delete_photo_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'delete_photo_title'"
+          },
+          {
+            "fieldPath": "delete_photo_description",
+            "columnName": "delete_photo_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'delete_photo_description'"
+          },
+          {
+            "fieldPath": "delete_address_title",
+            "columnName": "delete_address_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'delete_address_title'"
+          },
+          {
+            "fieldPath": "delete_address_description",
+            "columnName": "delete_address_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'delete_address_description'"
+          },
+          {
+            "fieldPath": "default_address_title",
+            "columnName": "default_address_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'default_address_title'"
+          },
+          {
+            "fieldPath": "default_address_description",
+            "columnName": "default_address_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'default_address_description'"
+          },
+          {
+            "fieldPath": "request_created_description",
+            "columnName": "request_created_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'request_created_description'"
+          },
+          {
+            "fieldPath": "account_with_phone_not_exist",
+            "columnName": "account_with_phone_not_exist",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'account_with_phone_not_exist'"
+          },
+          {
+            "fieldPath": "account_with_email_not_exist",
+            "columnName": "account_with_email_not_exist",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'account_with_email_not_exist'"
+          },
+          {
+            "fieldPath": "request_here",
+            "columnName": "request_here",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'request_here'"
+          },
+          {
+            "fieldPath": "looking_for_product",
+            "columnName": "looking_for_product",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'looking_for_product'"
+          },
+          {
+            "fieldPath": "what_are_you_looking_for",
+            "columnName": "what_are_you_looking_for",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'what_are_you_looking_for'"
+          },
+          {
+            "fieldPath": "categories",
+            "columnName": "categories",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'categories'"
+          },
+          {
+            "fieldPath": "all_categories_title",
+            "columnName": "all_categories_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'all_categories_title'"
+          },
+          {
+            "fieldPath": "filter",
+            "columnName": "filter",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'filter'"
+          },
+          {
+            "fieldPath": "reset",
+            "columnName": "reset",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'reset'"
+          },
+          {
+            "fieldPath": "price_range",
+            "columnName": "price_range",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'price_range'"
+          },
+          {
+            "fieldPath": "color",
+            "columnName": "color",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'color'"
+          },
+          {
+            "fieldPath": "size",
+            "columnName": "size",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'size'"
+          },
+          {
+            "fieldPath": "view_items",
+            "columnName": "view_items",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'view_items'"
+          },
+          {
+            "fieldPath": "quantity",
+            "columnName": "quantity",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'quantity'"
+          },
+          {
+            "fieldPath": "products_related_title",
+            "columnName": "products_related_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'products_related_title'"
+          },
+          {
+            "fieldPath": "subscribe",
+            "columnName": "subscribe",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'subscribe'"
+          },
+          {
+            "fieldPath": "add_to_basket",
+            "columnName": "add_to_basket",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'add_to_basket'"
+          },
+          {
+            "fieldPath": "basket",
+            "columnName": "basket",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'basket'"
+          },
+          {
+            "fieldPath": "favorites",
+            "columnName": "favorites",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'favorites'"
+          },
+          {
+            "fieldPath": "welcome_title",
+            "columnName": "welcome_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'welcome_title'"
+          },
+          {
+            "fieldPath": "welcome_description",
+            "columnName": "welcome_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'welcome_description'"
+          },
+          {
+            "fieldPath": "sign_in",
+            "columnName": "sign_in",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'sign_in'"
+          },
+          {
+            "fieldPath": "sign_in_description",
+            "columnName": "sign_in_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'sign_in_description'"
+          },
+          {
+            "fieldPath": "email_or_phone_number",
+            "columnName": "email_or_phone_number",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'email_or_phone_number'"
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'password'"
+          },
+          {
+            "fieldPath": "forgot_password",
+            "columnName": "forgot_password",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'forgot_password'"
+          },
+          {
+            "fieldPath": "forgot_password_title",
+            "columnName": "forgot_password_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'forgot_password_title'"
+          },
+          {
+            "fieldPath": "forgot_password_description",
+            "columnName": "forgot_password_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'forgot_password_description'"
+          },
+          {
+            "fieldPath": "don_t_have_an_account_sign_up",
+            "columnName": "don_t_have_an_account_sign_up",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'don_t_have_an_account_sign_up'"
+          },
+          {
+            "fieldPath": "sign_up",
+            "columnName": "sign_up",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'sign_up'"
+          },
+          {
+            "fieldPath": "already_have_an_account_sign_in",
+            "columnName": "already_have_an_account_sign_in",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'already_have_an_account_sign_in'"
+          },
+          {
+            "fieldPath": "phone_desc_for_sign_up",
+            "columnName": "phone_desc_for_sign_up",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'phone_desc_for_sign_up'"
+          },
+          {
+            "fieldPath": "email_desc_for_sign_up",
+            "columnName": "email_desc_for_sign_up",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'email_desc_for_sign_up'"
+          },
+          {
+            "fieldPath": "sign_up_with_email_address",
+            "columnName": "sign_up_with_email_address",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'sign_up_with_email_address'"
+          },
+          {
+            "fieldPath": "sign_up_with_phone_number",
+            "columnName": "sign_up_with_phone_number",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'sign_up_with_phone_number'"
+          },
+          {
+            "fieldPath": "enter_full_name",
+            "columnName": "enter_full_name",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'enter_full_name'"
+          },
+          {
+            "fieldPath": "choose_date_of_birth",
+            "columnName": "choose_date_of_birth",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'choose_date_of_birth'"
+          },
+          {
+            "fieldPath": "enter_email_address",
+            "columnName": "enter_email_address",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'enter_email_address'"
+          },
+          {
+            "fieldPath": "repeat_password",
+            "columnName": "repeat_password",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'repeat_password'"
+          },
+          {
+            "fieldPath": "confirm_terms_and_policy",
+            "columnName": "confirm_terms_and_policy",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'confirm_terms_and_policy'"
+          },
+          {
+            "fieldPath": "create_account",
+            "columnName": "create_account",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'create_account'"
+          },
+          {
+            "fieldPath": "please_enter_your_password",
+            "columnName": "please_enter_your_password",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'please_enter_your_password'"
+          },
+          {
+            "fieldPath": "create_password",
+            "columnName": "create_password",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'create_password'"
+          },
+          {
+            "fieldPath": "resend_again",
+            "columnName": "resend_again",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'resend_again'"
+          },
+          {
+            "fieldPath": "resend_in",
+            "columnName": "resend_in",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'resend_in'"
+          },
+          {
+            "fieldPath": "sent_code_to_phone",
+            "columnName": "sent_code_to_phone",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'sent_code_to_phone'"
+          },
+          {
+            "fieldPath": "sent_code_to_email",
+            "columnName": "sent_code_to_email",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'sent_code_to_email'"
+          },
+          {
+            "fieldPath": "enter_the_code",
+            "columnName": "enter_the_code",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'enter_the_code'"
+          },
+          {
+            "fieldPath": "full_name",
+            "columnName": "full_name",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'full_name'"
+          },
+          {
+            "fieldPath": "verification",
+            "columnName": "verification",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'verification'"
+          },
+          {
+            "fieldPath": "phone_number",
+            "columnName": "phone_number",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'phone_number'"
+          },
+          {
+            "fieldPath": "phone_",
+            "columnName": "phone_",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'phone_'"
+          },
+          {
+            "fieldPath": "send",
+            "columnName": "send",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'send'"
+          },
+          {
+            "fieldPath": "email_",
+            "columnName": "email_",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'email_'"
+          },
+          {
+            "fieldPath": "date_of_birth",
+            "columnName": "date_of_birth",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'date_of_birth'"
+          },
+          {
+            "fieldPath": "enter_email_or_phone_number",
+            "columnName": "enter_email_or_phone_number",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'enter_email_or_phone_number'"
+          },
+          {
+            "fieldPath": "verify",
+            "columnName": "verify",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'verify'"
+          },
+          {
+            "fieldPath": "forgot_password_",
+            "columnName": "forgot_password_",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'forgot_password_'"
+          },
+          {
+            "fieldPath": "email_address",
+            "columnName": "email_address",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'email_address'"
+          },
+          {
+            "fieldPath": "confirm_new_password",
+            "columnName": "confirm_new_password",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'confirm_new_password'"
+          },
+          {
+            "fieldPath": "change_password",
+            "columnName": "change_password",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'change_password'"
+          },
+          {
+            "fieldPath": "personal_information",
+            "columnName": "personal_information",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'personal_information'"
+          },
+          {
+            "fieldPath": "login_information",
+            "columnName": "login_information",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'login_information'"
+          },
+          {
+            "fieldPath": "current_password",
+            "columnName": "current_password",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'current_password'"
+          },
+          {
+            "fieldPath": "delete_photo",
+            "columnName": "delete_photo",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'delete_photo'"
+          },
+          {
+            "fieldPath": "take_a_photo",
+            "columnName": "take_a_photo",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'take_a_photo'"
+          },
+          {
+            "fieldPath": "choose_from_gallery",
+            "columnName": "choose_from_gallery",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'choose_from_gallery'"
+          },
+          {
+            "fieldPath": "receive_code",
+            "columnName": "receive_code",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'receive_code'"
+          },
+          {
+            "fieldPath": "new_password",
+            "columnName": "new_password",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'new_password'"
+          },
+          {
+            "fieldPath": "add_email_address",
+            "columnName": "add_email_address",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'add_email_address'"
+          },
+          {
+            "fieldPath": "change_email_address",
+            "columnName": "change_email_address",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'change_email_address'"
+          },
+          {
+            "fieldPath": "change_phone_number",
+            "columnName": "change_phone_number",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'change_phone_number'"
+          },
+          {
+            "fieldPath": "add_phone_number",
+            "columnName": "add_phone_number",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'add_phone_number'"
+          },
+          {
+            "fieldPath": "addresses",
+            "columnName": "addresses",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'addresses'"
+          },
+          {
+            "fieldPath": "address_",
+            "columnName": "address_",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'address_'"
+          },
+          {
+            "fieldPath": "add_address",
+            "columnName": "add_address",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'add_address'"
+          },
+          {
+            "fieldPath": "set_as_default",
+            "columnName": "set_as_default",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'set_as_default'"
+          },
+          {
+            "fieldPath": "make_default",
+            "columnName": "make_default",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'make_default'"
+          },
+          {
+            "fieldPath": "add_new_address",
+            "columnName": "add_new_address",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'add_new_address'"
+          },
+          {
+            "fieldPath": "edit_address",
+            "columnName": "edit_address",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'edit_address'"
+          },
+          {
+            "fieldPath": "delivery_address_information",
+            "columnName": "delivery_address_information",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'delivery_address_information'"
+          },
+          {
+            "fieldPath": "delivery_address_title",
+            "columnName": "delivery_address_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'delivery_address_title'"
+          },
+          {
+            "fieldPath": "enter_your_address",
+            "columnName": "enter_your_address",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'enter_your_address'"
+          },
+          {
+            "fieldPath": "address__",
+            "columnName": "address__",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'address__'"
+          },
+          {
+            "fieldPath": "apartment",
+            "columnName": "apartment",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'apartment'"
+          },
+          {
+            "fieldPath": "entrance",
+            "columnName": "entrance",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'entrance'"
+          },
+          {
+            "fieldPath": "floor",
+            "columnName": "floor",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'floor'"
+          },
+          {
+            "fieldPath": "additional_information",
+            "columnName": "additional_information",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'additional_information'"
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'title'"
+          },
+          {
+            "fieldPath": "set_as_default_address",
+            "columnName": "set_as_default_address",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'set_as_default_address'"
+          },
+          {
+            "fieldPath": "comment",
+            "columnName": "comment",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'comment'"
+          },
+          {
+            "fieldPath": "cards",
+            "columnName": "cards",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'cards'"
+          },
+          {
+            "fieldPath": "add_new_card",
+            "columnName": "add_new_card",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'add_new_card'"
+          },
+          {
+            "fieldPath": "add_card",
+            "columnName": "add_card",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'add_card'"
+          },
+          {
+            "fieldPath": "notifications",
+            "columnName": "notifications",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'notifications'"
+          },
+          {
+            "fieldPath": "order_history",
+            "columnName": "order_history",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'order_history'"
+          },
+          {
+            "fieldPath": "orders",
+            "columnName": "orders",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'orders'"
+          },
+          {
+            "fieldPath": "requests",
+            "columnName": "requests",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'requests'"
+          },
+          {
+            "fieldPath": "request_product",
+            "columnName": "request_product",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'request_product'"
+          },
+          {
+            "fieldPath": "categories_",
+            "columnName": "categories_",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'categories_'"
+          },
+          {
+            "fieldPath": "brand_",
+            "columnName": "brand_",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'brand_'"
+          },
+          {
+            "fieldPath": "date_",
+            "columnName": "date_",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'date_'"
+          },
+          {
+            "fieldPath": "request_info_description",
+            "columnName": "request_info_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'request_info_description'"
+          },
+          {
+            "fieldPath": "request_info_title",
+            "columnName": "request_info_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'request_info_title'"
+          },
+          {
+            "fieldPath": "request_info_hint_1",
+            "columnName": "request_info_hint_1",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'request_info_hint_1'"
+          },
+          {
+            "fieldPath": "request_info_hint_2",
+            "columnName": "request_info_hint_2",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'request_info_hint_2'"
+          },
+          {
+            "fieldPath": "request_info_hint_3",
+            "columnName": "request_info_hint_3",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'request_info_hint_3'"
+          },
+          {
+            "fieldPath": "request_now",
+            "columnName": "request_now",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'request_now'"
+          },
+          {
+            "fieldPath": "request_a_product_title_1",
+            "columnName": "request_a_product_title_1",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'request_a_product_title_1'"
+          },
+          {
+            "fieldPath": "request_a_product_title_2",
+            "columnName": "request_a_product_title_2",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'request_a_product_title_2'"
+          },
+          {
+            "fieldPath": "contact_information__",
+            "columnName": "contact_information__",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'contact_information__'"
+          },
+          {
+            "fieldPath": "select_category__",
+            "columnName": "select_category__",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'select_category__'"
+          },
+          {
+            "fieldPath": "select_category",
+            "columnName": "select_category",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'select_category'"
+          },
+          {
+            "fieldPath": "select_brand__",
+            "columnName": "select_brand__",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'select_brand__'"
+          },
+          {
+            "fieldPath": "select_brand",
+            "columnName": "select_brand",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'select_brand'"
+          },
+          {
+            "fieldPath": "product_name__",
+            "columnName": "product_name__",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'product_name__'"
+          },
+          {
+            "fieldPath": "enter_product_name",
+            "columnName": "enter_product_name",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'enter_product_name'"
+          },
+          {
+            "fieldPath": "description__",
+            "columnName": "description__",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'description__'"
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'description'"
+          },
+          {
+            "fieldPath": "upload_photo",
+            "columnName": "upload_photo",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'upload_photo'"
+          },
+          {
+            "fieldPath": "send_request",
+            "columnName": "send_request",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'send_request'"
+          },
+          {
+            "fieldPath": "subscriptions",
+            "columnName": "subscriptions",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'subscriptions'"
+          },
+          {
+            "fieldPath": "about_us",
+            "columnName": "about_us",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'about_us'"
+          },
+          {
+            "fieldPath": "about_app",
+            "columnName": "about_app",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'about_app'"
+          },
+          {
+            "fieldPath": "rate_app",
+            "columnName": "rate_app",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'rate_app'"
+          },
+          {
+            "fieldPath": "powered_by",
+            "columnName": "powered_by",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'powered_by'"
+          },
+          {
+            "fieldPath": "version_of_the_app",
+            "columnName": "version_of_the_app",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'version_of_the_app'"
+          },
+          {
+            "fieldPath": "find_us_on_facebook",
+            "columnName": "find_us_on_facebook",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'find_us_on_facebook'"
+          },
+          {
+            "fieldPath": "about_us_bottom_text",
+            "columnName": "about_us_bottom_text",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'about_us_bottom_text'"
+          },
+          {
+            "fieldPath": "about_us_top_text",
+            "columnName": "about_us_top_text",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'about_us_top_text'"
+          },
+          {
+            "fieldPath": "about_us_title",
+            "columnName": "about_us_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'about_us_title'"
+          },
+          {
+            "fieldPath": "privacy_police",
+            "columnName": "privacy_police",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'privacy_police'"
+          },
+          {
+            "fieldPath": "terms_and_conditions",
+            "columnName": "terms_and_conditions",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'terms_and_conditions'"
+          },
+          {
+            "fieldPath": "frequently_asked_questions",
+            "columnName": "frequently_asked_questions",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'frequently_asked_questions'"
+          },
+          {
+            "fieldPath": "faq_title",
+            "columnName": "faq_title",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'faq_title'"
+          },
+          {
+            "fieldPath": "faq",
+            "columnName": "faq",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'faq'"
+          },
+          {
+            "fieldPath": "faq_placeholder",
+            "columnName": "faq_placeholder",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'faq_placeholder'"
+          },
+          {
+            "fieldPath": "faq_description",
+            "columnName": "faq_description",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'faq_description'"
+          },
+          {
+            "fieldPath": "we_are_here_to_help_you",
+            "columnName": "we_are_here_to_help_you",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'we_are_here_to_help_you'"
+          },
+          {
+            "fieldPath": "email_value",
+            "columnName": "email_value",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'email_value'"
+          },
+          {
+            "fieldPath": "news_and_events",
+            "columnName": "news_and_events",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'news_and_events'"
+          },
+          {
+            "fieldPath": "select_the_topic",
+            "columnName": "select_the_topic",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'select_the_topic'"
+          },
+          {
+            "fieldPath": "select_topic",
+            "columnName": "select_topic",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'select_topic'"
+          },
+          {
+            "fieldPath": "leave_your_message",
+            "columnName": "leave_your_message",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'leave_your_message'"
+          },
+          {
+            "fieldPath": "contact_information",
+            "columnName": "contact_information",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'contact_information'"
+          },
+          {
+            "fieldPath": "contact_us",
+            "columnName": "contact_us",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'contact_us'"
+          },
+          {
+            "fieldPath": "let_s_collaborate",
+            "columnName": "let_s_collaborate",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'let_s_collaborate'"
+          },
+          {
+            "fieldPath": "message__",
+            "columnName": "message__",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'message__'"
+          },
+          {
+            "fieldPath": "fill_out_the_form_below",
+            "columnName": "fill_out_the_form_below",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'fill_out_the_form_below'"
+          },
+          {
+            "fieldPath": "address_value",
+            "columnName": "address_value",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'address_value'"
+          },
+          {
+            "fieldPath": "phone_value",
+            "columnName": "phone_value",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'phone_value'"
+          },
+          {
+            "fieldPath": "grant_market_help",
+            "columnName": "grant_market_help",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'grant_market_help'"
+          },
+          {
+            "fieldPath": "full_name__",
+            "columnName": "full_name__",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'full_name__'"
+          },
+          {
+            "fieldPath": "leave_message",
+            "columnName": "leave_message",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'leave_message'"
+          },
+          {
+            "fieldPath": "select_the_topic_",
+            "columnName": "select_the_topic_",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'select_the_topic_'"
+          },
+          {
+            "fieldPath": "products",
+            "columnName": "products",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'products'"
+          },
+          {
+            "fieldPath": "technical_support",
+            "columnName": "technical_support",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'technical_support'"
+          },
+          {
+            "fieldPath": "collaboration",
+            "columnName": "collaboration",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'collaboration'"
+          },
+          {
+            "fieldPath": "advertising_proposal",
+            "columnName": "advertising_proposal",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'advertising_proposal'"
+          },
+          {
+            "fieldPath": "review",
+            "columnName": "review",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'review'"
+          },
+          {
+            "fieldPath": "comments_and_suggestions",
+            "columnName": "comments_and_suggestions",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'comments_and_suggestions'"
+          },
+          {
+            "fieldPath": "settings",
+            "columnName": "settings",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'settings'"
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'language'"
+          },
+          {
+            "fieldPath": "notifications_about_subscriptions",
+            "columnName": "notifications_about_subscriptions",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'notifications_about_subscriptions'"
+          },
+          {
+            "fieldPath": "notifications_about__discounts",
+            "columnName": "notifications_about__discounts",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'notifications_about__discounts'"
+          },
+          {
+            "fieldPath": "marketing_notifications",
+            "columnName": "marketing_notifications",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'marketing_notifications'"
+          },
+          {
+            "fieldPath": "email_notifications",
+            "columnName": "email_notifications",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'email_notifications'"
+          },
+          {
+            "fieldPath": "push_notifications",
+            "columnName": "push_notifications",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'push_notifications'"
+          },
+          {
+            "fieldPath": "select_the_app_language",
+            "columnName": "select_the_app_language",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'select_the_app_language'"
+          },
+          {
+            "fieldPath": "brands",
+            "columnName": "brands",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'brands'"
+          },
+          {
+            "fieldPath": "new_products",
+            "columnName": "new_products",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'new_products'"
+          },
+          {
+            "fieldPath": "last_name",
+            "columnName": "last_name",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'last_name'"
+          },
+          {
+            "fieldPath": "message",
+            "columnName": "message",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'message'"
+          },
+          {
+            "fieldPath": "home_page_1_text",
+            "columnName": "home_page_1_text",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'home_page_1_text'"
+          },
+          {
+            "fieldPath": "catalog",
+            "columnName": "catalog",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'catalog'"
+          },
+          {
+            "fieldPath": "learn_more",
+            "columnName": "learn_more",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'learn_more'"
+          },
+          {
+            "fieldPath": "filter_by",
+            "columnName": "filter_by",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'filter_by'"
+          },
+          {
+            "fieldPath": "card_list",
+            "columnName": "card_list",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'card_list'"
+          },
+          {
+            "fieldPath": "home_page_2_text",
+            "columnName": "home_page_2_text",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'home_page_2_text'"
+          },
+          {
+            "fieldPath": "copy_right_text",
+            "columnName": "copy_right_text",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'copy_right_text'"
+          },
+          {
+            "fieldPath": "discounts",
+            "columnName": "discounts",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'discounts'"
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'price'"
+          },
+          {
+            "fieldPath": "newest",
+            "columnName": "newest",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'newest'"
+          },
+          {
+            "fieldPath": "select_your_display_language",
+            "columnName": "select_your_display_language",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'select_your_display_language'"
+          },
+          {
+            "fieldPath": "new_arrivals",
+            "columnName": "new_arrivals",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'new_arrivals'"
+          },
+          {
+            "fieldPath": "filter_by_price",
+            "columnName": "filter_by_price",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'filter_by_price'"
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'name'"
+          },
+          {
+            "fieldPath": "bestsellers",
+            "columnName": "bestsellers",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'bestsellers'"
+          },
+          {
+            "fieldPath": "follow_us",
+            "columnName": "follow_us",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'follow_us'"
+          },
+          {
+            "fieldPath": "sort_by",
+            "columnName": "sort_by",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'sort_by'"
+          },
+          {
+            "fieldPath": "view_all",
+            "columnName": "view_all",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'view_all'"
+          },
+          {
+            "fieldPath": "company",
+            "columnName": "company",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'company'"
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b0a91fae547e7abfb9cc22169d378a9b')"
+    ]
+  }
+}

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="isLoading"
+            type="Boolean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/header_blue_text_color_light"
+        tools:context=".ui.auth.fragments.SignInFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/background_toolbar_gradient"
+            android:elevation="1dp"
+            app:navigationIcon="@drawable/ic_arrow_left">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingTop="?attr/actionBarSize"
+            android:paddingBottom="@dimen/view_size_3">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/main_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/view_size_3"
+                    android:background="@drawable/background_rounded_18"
+                    android:paddingTop="@dimen/view_size_7"
+                    android:paddingBottom="@dimen/view_size_3"
+                    android:transitionName="MainLayoutTransitionName">
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:src="@drawable/ic_grant_market_logo"
+                        android:transitionName="LogoTransitionName"
+                        app:layout_constraintDimensionRatio="1.2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.35" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="@dimen/view_size_7"
+                        app:layout_constraintBottom_toTopOf="@id/have_account"
+                        app:layout_constraintHeight_min="400dp"
+                        app:layout_constraintTop_toBottomOf="@id/logo">
+
+                        <LinearLayout
+                            android:id="@+id/input_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/view_size_4"
+                            android:layout_marginBottom="@dimen/view_size_4"
+                            android:orientation="vertical"
+                            android:paddingBottom="@dimen/view_size_9"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/title"
+                                style="@style/Bold22BlueStyleLight"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/view_size_5"
+                                android:text='@{keys.sign_in, default = @string/sign_in}'
+                                android:textAllCaps="true"
+                                android:textSize="@dimen/text_size_7"
+                                android:transitionName="TitleTransitionName"
+                                app:layout_constraintTop_toBottomOf="@id/logo" />
+
+                            <TextView
+                                android:id="@+id/description"
+                                style="@style/Regular16BlackStyleLight"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/view_size_5"
+                                android:layout_marginTop="@dimen/view_size_1"
+                                android:layout_marginEnd="@dimen/view_size_5"
+                                android:text='@{keys.sign_in_description, default = @string/please_enter_your_login_and_password}'
+                                android:transitionName="DescriptionTransitionName"
+                                app:layout_constraintTop_toBottomOf="@id/title" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/phone_or_email_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/view_size_5"
+                                android:layout_marginTop="@dimen/view_size_3"
+                                android:layout_marginEnd="@dimen/view_size_5"
+                                android:clipToPadding="false"
+                                android:textColorHint="#A7A7A7"
+                                android:transitionName="PhoneLayoutTransitionName"
+                                app:boxStrokeWidth="0dp"
+                                app:boxStrokeWidthFocused="0dp"
+                                app:hintEnabled="false"
+                                app:layout_constraintTop_toBottomOf="@id/description">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/phone_or_email"
+                                    style="?attr/InputStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/button_height"
+                                    android:enabled="@{!isLoading}"
+                                    android:hint='@{keys.email_or_phone_number, default = @string/phone_or_email_address}'
+                                    android:imeOptions="actionNext"
+                                    android:inputType="text"
+                                    android:singleLine="true"
+                                    app:layout_constraintTop_toBottomOf="@id/description" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/password_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/view_size_5"
+                                android:layout_marginTop="@dimen/view_size_3"
+                                android:layout_marginEnd="@dimen/view_size_5"
+                                android:clipToPadding="false"
+                                android:textColorHint="#A7A7A7"
+                                android:transitionName="PasswordLayoutTransitionName"
+                                app:boxStrokeWidth="0dp"
+                                app:boxStrokeWidthFocused="0dp"
+                                app:hintEnabled="false"
+                                app:layout_constraintTop_toBottomOf="@id/phone_or_email_layout"
+                                app:passwordToggleEnabled="true"
+                                app:passwordToggleTint="#A7A7A7">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/password"
+                                    style="?attr/InputStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/button_height"
+                                    android:enabled="@{!isLoading}"
+                                    android:hint='@{keys.password, default = @string/password}'
+                                    android:imeOptions="actionDone"
+                                    android:importantForAutofill="no"
+                                    android:inputType="textPassword"
+                                    android:singleLine="true" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/forgot_password"
+                                style="@style/Medium14BlackStyleLight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginStart="@dimen/view_size_5"
+                                android:layout_marginTop="@dimen/view_size_1"
+                                android:layout_marginEnd="@dimen/view_size_5"
+                                android:enabled="@{!isLoading}"
+                                android:gravity="end"
+                                android:text='@{keys.forgot_password, default = @string/forgot_password}'
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/password_layout" />
+
+                        </LinearLayout>
+
+                        <com.armboldmind.grandmarket.shared.customview.LoadingButton
+                            android:id="@+id/sign_in"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/button_height"
+                            android:layout_marginTop="@dimen/view_size_5"
+                            android:transitionName="ButtonTransitionName"
+                            app:layout_constraintBottom_toBottomOf="@id/input_layout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/input_layout"
+                            app:layout_constraintWidth_percent="0.6"
+                            app:text=" " />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/have_account"
+                        style="@style/Medium16BlackStyleLight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_size_5"
+                        android:layout_marginTop="@dimen/view_size_4"
+                        android:layout_marginEnd="@dimen/view_size_5"
+                        android:enabled="@{!isLoading}"
+                        android:gravity="center"
+                        android:transitionName="HaveAccountTransitionName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:text="@string/don_t_have_an_account_sign_up" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

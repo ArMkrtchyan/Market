@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="newsAndEvents"
+            type="com.armboldmind.grandmarket.data.models.domain.NewsAndEvents" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/view_size_2"
+        android:background="@drawable/shadow_122754"
+        android:padding="8dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="@dimen/view_size_1"
+                    android:layout_marginTop="@dimen/view_size_1"
+                    android:background="@drawable/background_rounded_2"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_grant_market_logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/order_id"
+                    style="?attr/DescriptionTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_1"
+                    android:layout_marginEnd="@dimen/view_size_4"
+                    android:fontFamily="@font/medium"
+                    android:text="#000253"
+                    android:textSize="@dimen/text_size_4"
+                    app:layout_constraintBottom_toBottomOf="@id/icon"
+                    app:layout_constraintEnd_toStartOf="@id/status"
+                    app:layout_constraintStart_toEndOf="@id/icon"
+                    app:layout_constraintTop_toTopOf="@id/icon" />
+
+                <View
+                    android:id="@+id/status_indicator"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/background_badge"
+                    app:layout_constraintBottom_toBottomOf="@id/status"
+                    app:layout_constraintEnd_toStartOf="@id/status"
+                    app:layout_constraintTop_toTopOf="@id/status" />
+
+                <TextView
+                    android:id="@+id/status"
+                    style="?attr/DescriptionTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/view_size_1"
+                    android:fontFamily="@font/medium"
+                    android:text="Canceled"
+                    android:textSize="@dimen/text_size_4"
+                    app:layout_constraintBottom_toBottomOf="@id/icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/icon" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="@dimen/view_size_1"
+                    android:alpha="0.2"
+                    android:background="@drawable/background_rounded_divider"
+                    android:backgroundTint="@color/colorAccent"
+                    app:layout_constraintTop_toBottomOf="@id/icon" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/view_size_1"
+                    app:layout_constraintTop_toBottomOf="@id/divider">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:weightSum="12">
+
+                        <TextView
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:fontFamily="@font/medium"
+                            android:paddingEnd="@dimen/view_size_1"
+                            android:text="@string/recipient"
+                            android:textSize="@dimen/text_size_4" />
+
+                        <TextView
+                            android:id="@+id/recipient"
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:fontFamily="@font/medium"
+                            android:text="Anna Adonc"
+                            android:textSize="@dimen/text_size_4"
+                            android:textStyle="bold" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:weightSum="12">
+
+                        <TextView
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:fontFamily="@font/medium"
+                            android:paddingEnd="@dimen/view_size_1"
+                            android:text='@{@string/phone_number + ":"}'
+                            android:textSize="@dimen/text_size_4"
+                            tools:text='@string/phone_number' />
+
+                        <TextView
+                            android:id="@+id/phone_number"
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:fontFamily="@font/medium"
+                            android:text="+374 93 876378"
+                            android:textSize="@dimen/text_size_4"
+                            android:textStyle="bold" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:weightSum="12">
+
+                        <TextView
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:fontFamily="@font/medium"
+                            android:paddingEnd="@dimen/view_size_1"
+                            android:text="@string/order_date"
+                            android:textSize="@dimen/text_size_4" />
+
+                        <TextView
+                            android:id="@+id/order_date"
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:fontFamily="@font/medium"
+                            android:text="01.01.2021 12:45"
+                            android:textSize="@dimen/text_size_4"
+                            android:textStyle="bold" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:weightSum="12">
+
+                        <TextView
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:fontFamily="@font/medium"
+                            android:paddingEnd="@dimen/view_size_1"
+                            android:text="@string/delivery_date"
+                            android:textSize="@dimen/text_size_4" />
+
+                        <TextView
+                            android:id="@+id/delivery_date"
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:fontFamily="@font/medium"
+                            android:text="01.01.2021 12:45"
+                            android:textSize="@dimen/text_size_4"
+                            android:textStyle="bold" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:weightSum="12">
+
+                        <TextView
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:fontFamily="@font/medium"
+                            android:paddingEnd="@dimen/view_size_1"
+                            android:text="@string/delivery_address"
+                            android:textSize="@dimen/text_size_4" />
+
+                        <TextView
+                            android:id="@+id/delivery_address"
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:fontFamily="@font/medium"
+                            android:text="str. Estonakan, 12/1"
+                            android:textSize="@dimen/text_size_4"
+                            android:textStyle="bold" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:weightSum="12">
+
+                        <TextView
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:fontFamily="@font/medium"
+                            android:paddingEnd="@dimen/view_size_1"
+                            android:text="@string/payment_method"
+                            android:textSize="@dimen/text_size_4" />
+
+                        <TextView
+                            android:id="@+id/payment_method"
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:fontFamily="@font/medium"
+                            android:text="**** **** **** 7778"
+                            android:textSize="@dimen/text_size_4"
+                            android:textStyle="bold" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:weightSum="12">
+
+                        <TextView
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:fontFamily="@font/medium"
+                            android:paddingEnd="@dimen/view_size_1"
+                            android:text="@string/delivery_type"
+                            android:textSize="@dimen/text_size_4" />
+
+                        <TextView
+                            android:id="@+id/delivery_type"
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:fontFamily="@font/medium"
+                            android:text="Standart"
+                            android:textSize="@dimen/text_size_4"
+                            android:textStyle="bold" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:orientation="horizontal"
+                        android:weightSum="12">
+
+                        <TextView
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:fontFamily="@font/medium"
+                            android:paddingEnd="@dimen/view_size_1"
+                            android:text="@string/comment_"
+                            android:textSize="@dimen/text_size_4" />
+
+                        <TextView
+                            android:id="@+id/comment"
+                            style="?attr/DescriptionTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:fontFamily="@font/medium"
+                            android:text="Lorem ipsum dolor sit ame"
+                            android:textSize="@dimen/text_size_4"
+                            android:textStyle="bold" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

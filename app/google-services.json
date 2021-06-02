@@ -1,0 +1,39 @@
+{
+//  "project_info": {
+//    "project_number": "1062989487166",
+//    "project_id": "grand-market-62a0c",
+//    "storage_bucket": "grand-market-62a0c.appspot.com"
+//  },
+//  "client": [
+//    {
+//      "client_info": {
+//        "mobilesdk_app_id": "1:1062989487166:android:36f75db4d563a33415856f",
+//        "android_client_info": {
+//          "package_name": "com.armboldmind.grandmarket"
+//        }
+//      },
+//      "oauth_client": [
+//        {
+//          "client_id": "1062989487166-2oal29b9q3btfn76aoaq08itkkrvdqut.apps.googleusercontent.com",
+//          "client_type": 3
+//        }
+//      ],
+//      "api_key": [
+//        {
+//          "current_key": "AIzaSyBS2cbZLJ_gclxP4_84r4YKgjiXFKT7yUA"
+//        }
+//      ],
+//      "services": {
+//        "appinvite_service": {
+//          "other_platform_oauth_client": [
+//            {
+//              "client_id": "1062989487166-2oal29b9q3btfn76aoaq08itkkrvdqut.apps.googleusercontent.com",
+//              "client_type": 3
+//            }
+//          ]
+//        }
+//      }
+//    }
+//  ],
+//  "configuration_version": "1"
+}

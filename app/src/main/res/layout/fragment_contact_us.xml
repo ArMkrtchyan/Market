@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="isLoading"
+            type="Boolean" />
+
+        <variable
+            name="user"
+            type="com.armboldmind.grandmarket.data.models.domain.User" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/CardBackgroundColor"
+            android:elevation="3dp"
+            app:navigationIcon="@drawable/ic_back">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    style="?attr/Bold18BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text='@{keys.contact_us,default = @string/contact_us}' />
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingStart="@dimen/view_size_3"
+            android:paddingTop="@dimen/view_size_3"
+            android:paddingEnd="@dimen/view_size_3"
+            android:paddingBottom="100dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintDimensionRatio="1.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:scaleX="1.2"
+                            android:scaleY="1.2"
+                            android:src="@drawable/contact_us_header" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    style="?attr/HeaderBlackTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="10dp"
+                    android:text='@{keys.let_s_collaborate,default = @string/let_s_collaborate}'
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/text_size_5.5"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/header"
+                    app:layout_constraintDimensionRatio="3" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/header">
+
+                    <TextView
+                        android:id="@+id/phone_title"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="@dimen/view_size_3"
+                        android:text='@{keys.phone_,default = @string/phone_}'
+                        android:textSize="@dimen/text_size_4"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/phone"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/phone_title"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:fontFamily="@font/medium"
+                        android:text='@{keys.phone_value,default = @string/_374_99_11_22_33}'
+                        android:textSize="@dimen/text_size_4"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/email_title"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/phone"
+                        android:layout_marginTop="@dimen/view_size_3"
+                        android:text='@{keys.email_,default = @string/email_}'
+                        android:textSize="@dimen/text_size_4"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/email_title"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:fontFamily="@font/medium"
+                        android:text='@{keys.email_value,default = @string/info_grandmarketteam_am}'
+                        android:textSize="@dimen/text_size_4"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/address_title"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/email"
+                        android:layout_marginTop="@dimen/view_size_3"
+                        android:text='@{keys.address_,default = @string/address}'
+                        android:textSize="@dimen/text_size_4"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/address_title"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:fontFamily="@font/medium"
+                        android:text='@{keys.address_value,default = @string/armenia_0061_yerevan_shahamiryanneri_st_22_building_shengavit_adm_district}'
+                        android:textSize="@dimen/text_size_4"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/support_title"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/address"
+                        android:layout_marginTop="@dimen/view_size_5"
+                        android:fontFamily="@font/medium"
+                        android:text='@{keys.grant_market_help,default = @string/grant_market_support_is_always_ready_to_help}'
+                        android:textSize="@dimen/text_size_6" />
+
+                    <TextView
+                        android:id="@+id/option_title"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/support_title"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:fontFamily="@font/medium"
+                        android:text='@{keys.select_the_topic_,default = @string/select_the_topic}'
+                        android:textSize="@dimen/text_size_5"
+                        tools:text='@string/select_the_topic' />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/topic"
+                        style="?attr/InputStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_below="@id/option_title"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:clickable="true"
+                        android:enabled="@{!isLoading}"
+                        android:focusable="true"
+                        android:focusableInTouchMode="false"
+                        android:text='@{keys.select_the_topic,default = @string/select_the_topic}' />
+
+                    <TextView
+                        android:id="@+id/fill_title"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/topic"
+                        android:layout_marginTop="@dimen/view_size_4"
+                        android:fontFamily="@font/medium"
+                        android:text='@{keys.fill_out_the_form_below,default = @string/fill_out_the_form_below}'
+                        android:textSize="@dimen/text_size_6" />
+
+                    <TextView
+                        android:id="@+id/full_name_title"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/fill_title"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:fontFamily="@font/medium"
+                        android:text='@{keys.full_name__,default = @string/full_name_}'
+                        android:textSize="@dimen/text_size_4" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/full_name"
+                        style="?attr/InputStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_below="@id/full_name_title"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:enabled="@{!isLoading}"
+                        android:hint='@{keys.enter_full_name,default = @string/enter_full_name}'
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLength="60"
+                        android:text='@{user.PhysicalUser.fullName}' />
+
+                    <TextView
+                        android:id="@+id/contact_title"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/full_name"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:fontFamily="@font/medium"
+                        android:text='@{keys.contact_information,default = @string/contact_information}'
+                        android:textSize="@dimen/text_size_4" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/contact"
+                        style="?attr/InputStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_below="@id/contact_title"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:enabled="@{!isLoading}"
+                        android:hint='@{keys.enter_email_or_phone_number,default = @string/enter_email_or_phone_number}'
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:text='@{user.phoneNumber.length() > 0 ? user.phoneNumber : user.email}' />
+
+                    <TextView
+                        android:id="@+id/message_title"
+                        style="?attr/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/contact"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="@dimen/view_size_2"
+                        android:fontFamily="@font/medium"
+                        android:text='@{keys.message,default = @string/message}'
+                        android:textSize="@dimen/text_size_4" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/message"
+                        style="?attr/InputStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/message_title"
+                        android:layout_marginTop="@dimen/view_size_1"
+                        android:enabled="@{!isLoading}"
+                        android:gravity="start"
+                        android:hint='@{keys.leave_message,default = @string/leave_message}'
+                        android:imeOptions="actionDone"
+                        android:lines="5"
+                        android:minLines="5" />
+
+                    <com.armboldmind.grandmarket.shared.customview.LoadingButton
+                        android:id="@+id/send"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_below="@id/message"
+                        android:layout_marginTop="@dimen/view_size_6"
+                        app:text=" " />
+
+                </RelativeLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+</layout>

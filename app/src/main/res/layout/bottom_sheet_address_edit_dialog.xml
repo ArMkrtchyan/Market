@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="isSelected"
+            type="Boolean" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/view_size_4"
+        android:paddingBottom="@dimen/view_size_3">
+
+
+        <TextView
+            android:id="@+id/set_as_default"
+            style="?attr/Bold18BlackStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/view_size_3"
+            android:paddingTop="@dimen/view_size_1"
+            android:paddingEnd="@dimen/view_size_3"
+            android:paddingBottom="@dimen/view_size_1"
+            android:text='@{keys.set_as_default, default = @string/set_as_default }' />
+
+        <TextView
+            android:id="@+id/edit"
+            style="?attr/Bold18BlackStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/view_size_3"
+            android:paddingTop="@dimen/view_size_1"
+            android:paddingEnd="@dimen/view_size_3"
+            android:paddingBottom="@dimen/view_size_1"
+            android:text='@{keys.edit, default = @string/edit }' />
+
+        <TextView
+            android:id="@+id/delete"
+            style="?attr/Bold18BlackStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/view_size_3"
+            android:paddingTop="@dimen/view_size_1"
+            android:paddingEnd="@dimen/view_size_3"
+            android:paddingBottom="@dimen/view_size_1"
+            android:text='@{keys.delete, default = @string/delete }' />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

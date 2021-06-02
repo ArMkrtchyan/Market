@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Medium12StyleDark" parent="BaseMediumStyle">
+        <item name="android:textSize">@dimen/text_size_3</item>
+    </style>
+
+    <style name="Medium12BlackStyleDark" parent="Medium12StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Medium12BlueStyleDark" parent="Medium12StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+    <style name="Medium14StyleDark" parent="BaseMediumStyle">
+        <item name="android:textSize">@dimen/text_size_3</item>
+    </style>
+
+    <style name="Medium14BlackStyleDark" parent="Medium14StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Medium14BlueStyleDark" parent="Medium14StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+    <style name="Medium16StyleDark" parent="BaseMediumStyle">
+        <item name="android:textSize">@dimen/text_size_4</item>
+    </style>
+
+    <style name="Medium16BlackStyleDark" parent="Medium16StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Medium16BlueStyleDark" parent="Medium16StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+
+    <style name="Medium18StyleDark" parent="BaseMediumStyle">
+        <item name="android:textSize">@dimen/text_size_5</item>
+    </style>
+
+    <style name="Medium18BlackStyleDark" parent="Medium18StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Medium18BlueStyleDark" parent="Medium18StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+    <style name="Medium20StyleDark" parent="BaseMediumStyle">
+        <item name="android:textSize">@dimen/text_size_6</item>
+    </style>
+
+    <style name="Medium20BlackStyleDark" parent="Medium20StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Medium20BlueStyleDark" parent="Medium20StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+</resources>

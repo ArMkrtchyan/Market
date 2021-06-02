@@ -1,0 +1,52 @@
+<resources>
+
+
+    <dimen name="button_height">46dp</dimen>
+    <dimen name="adapter_item_height">26dp</dimen>
+
+    <dimen name="badge_size">8dp</dimen>
+    <dimen name="view_size_1">4dp</dimen>
+    <dimen name="view_size_2">6dp</dimen>
+    <dimen name="view_size_3">10dp</dimen>
+    <dimen name="view_size_4">18dp</dimen>
+    <dimen name="view_size_5">25dp</dimen>
+    <dimen name="view_size_6">33dp</dimen>
+    <dimen name="view_size_7">42dp</dimen>
+    <dimen name="view_size_8">52dp</dimen>
+    <dimen name="view_size_9">60dp</dimen>
+    <dimen name="view_size_10">75dp</dimen>
+    <dimen name="view_size_11">95dp</dimen>
+    <dimen name="view_size_12">125dp</dimen>
+    <dimen name="view_size_13">155dp</dimen>
+    <dimen name="view_size_14">185dp</dimen>
+
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_m">16sp</dimen>
+    <dimen name="text_size_l">19sp</dimen>
+    <dimen name="text_size_xl">22sp</dimen>
+    <dimen name="text_size_xxl">27sp</dimen>
+    <dimen name="text_size_xxxl">35sp</dimen>
+    <dimen name="text_size_s">12sp</dimen>
+    <dimen name="text_size_xs">10sp</dimen>
+    <dimen name="text_size_xxs">8sp</dimen>
+
+    <dimen name="text_size_1">8sp</dimen>
+    <dimen name="text_size_1.5">9sp</dimen>
+    <dimen name="text_size_2">10sp</dimen>
+    <dimen name="text_size_2.5">11sp</dimen>
+    <dimen name="text_size_3">12sp</dimen>
+    <dimen name="text_size_3.5">13sp</dimen>
+    <dimen name="text_size_4">14sp</dimen>
+    <dimen name="text_size_4.5">15sp</dimen>
+    <dimen name="text_size_5">16sp</dimen>
+    <dimen name="text_size_5.5">17sp</dimen>
+    <dimen name="text_size_6">18sp</dimen>
+    <dimen name="text_size_6.5">19sp</dimen>
+    <dimen name="text_size_7">20sp</dimen>
+    <dimen name="text_size_7.5">21sp</dimen>
+    <dimen name="text_size_8">22sp</dimen>
+    <dimen name="text_size_8.5">23sp</dimen>
+    <dimen name="text_size_9">24sp</dimen>
+    <dimen name="text_size_9.5">25sp</dimen>
+    <dimen name="text_size_10">26sp</dimen>
+</resources>

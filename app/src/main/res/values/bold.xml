@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="BaseBoldStyle">
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Bold14StyleLight" parent="BaseBoldStyle">
+        <item name="android:textSize">@dimen/text_size_3</item>
+    </style>
+
+    <style name="Bold14BlackStyleLight" parent="Bold14StyleLight">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Bold14BlueStyleLight" parent="Bold14StyleLight">
+        <item name="android:textColor">@color/header_blue_text_color_light</item>
+    </style>
+
+    <style name="Bold16StyleLight" parent="BaseBoldStyle">
+        <item name="android:textSize">@dimen/text_size_4</item>
+    </style>
+
+    <style name="Bold16BlackStyleLight" parent="Bold16StyleLight">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Bold16BlueStyleLight" parent="Bold16StyleLight">
+        <item name="android:textColor">@color/header_blue_text_color_light</item>
+    </style>
+
+
+    <style name="Bold18StyleLight" parent="BaseBoldStyle">
+        <item name="android:textSize">@dimen/text_size_5</item>
+    </style>
+
+    <style name="Bold18BlackStyleLight" parent="Bold18StyleLight">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Bold18BlueStyleLight" parent="Bold18StyleLight">
+        <item name="android:textColor">@color/header_blue_text_color_light</item>
+    </style>
+
+    <style name="Bold20StyleLight" parent="BaseBoldStyle">
+        <item name="android:textSize">@dimen/text_size_6</item>
+    </style>
+
+    <style name="Bold20BlackStyleLight" parent="Bold20StyleLight">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Bold20BlueStyleLight" parent="Bold20StyleLight">
+        <item name="android:textColor">@color/header_blue_text_color_light</item>
+    </style>
+
+    <style name="Bold22StyleLight" parent="BaseBoldStyle">
+        <item name="android:textSize">@dimen/text_size_7</item>
+    </style>
+
+    <style name="Bold22BlackStyleLight" parent="Bold20StyleLight">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Bold22BlueStyleLight" parent="Bold20StyleLight">
+        <item name="android:textColor">@color/header_blue_text_color_light</item>
+    </style>
+</resources>

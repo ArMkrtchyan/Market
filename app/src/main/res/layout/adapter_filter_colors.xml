@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/view_size_5"
+            android:layout_marginTop="@dimen/view_size_3"
+            android:layout_marginEnd="@dimen/view_size_5"
+            android:background="@color/black_20" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_size_5"
+            android:layout_marginTop="@dimen/view_size_3"
+            android:layout_marginEnd="@dimen/view_size_5">
+
+            <TextView
+                android:id="@+id/title"
+                style="?attr/Medium18BlackStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/color_name"
+                style="?attr/Bold16BlackStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_size_2" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/colors"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/adapter_item_height"
+            android:layout_marginTop="@dimen/view_size_1"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/view_size_5"
+            android:paddingEnd="@dimen/view_size_5"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/adapter_colors" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

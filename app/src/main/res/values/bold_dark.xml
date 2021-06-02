@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Bold14StyleDark" parent="BaseBoldStyle">
+        <item name="android:textSize">@dimen/text_size_3</item>
+    </style>
+
+    <style name="Bold14BlackStyleDark" parent="Bold14StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Bold14BlueStyleDark" parent="Bold14StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+    <style name="Bold16StyleDark" parent="BaseBoldStyle">
+        <item name="android:textSize">@dimen/text_size_4</item>
+    </style>
+
+    <style name="Bold16BlackStyleDark" parent="Bold16StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Bold16BlueStyleDark" parent="Bold16StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+
+    <style name="Bold18StyleDark" parent="BaseBoldStyle">
+        <item name="android:textSize">@dimen/text_size_5</item>
+    </style>
+
+    <style name="Bold18BlackStyleDark" parent="Bold18StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Bold18BlueStyleDark" parent="Bold18StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+    <style name="Bold20StyleDark" parent="BaseBoldStyle">
+        <item name="android:textSize">@dimen/text_size_6</item>
+    </style>
+
+    <style name="Bold20BlackStyleDark" parent="Bold20StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Bold20BlueStyleDark" parent="Bold20StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+
+    <style name="Bold22StyleDark" parent="BaseBoldStyle">
+        <item name="android:textSize">@dimen/text_size_7</item>
+    </style>
+
+    <style name="Bold22BlackStyleDark" parent="Bold20StyleDark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Bold22BlueStyleDark" parent="Bold20StyleDark">
+        <item name="android:textColor">@color/header_blue_text_color_dark</item>
+    </style>
+</resources>

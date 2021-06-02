@@ -1,0 +1,51 @@
+<resources>
+
+    <dimen name="button_height">50dp</dimen>
+    <dimen name="adapter_item_height">30dp</dimen>
+
+    <dimen name="view_size_1">9dp</dimen>
+    <dimen name="view_size_2">12dp</dimen>
+    <dimen name="view_size_3">20dp</dimen>
+    <dimen name="view_size_4">25dp</dimen>
+    <dimen name="view_size_5">31dp</dimen>
+    <dimen name="view_size_6">43dp</dimen>
+    <dimen name="view_size_7">55dp</dimen>
+    <dimen name="view_size_8">65dp</dimen>
+    <dimen name="view_size_9">80dp</dimen>
+    <dimen name="view_size_10">120dp</dimen>
+    <dimen name="view_size_11">145dp</dimen>
+    <dimen name="view_size_12">175dp</dimen>
+    <dimen name="view_size_13">205dp</dimen>
+    <dimen name="view_size_14">235dp</dimen>
+
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_m">18sp</dimen>
+    <dimen name="text_size_l">20sp</dimen>
+    <dimen name="text_size_xl">24sp</dimen>
+    <dimen name="text_size_xxl">30sp</dimen>
+    <dimen name="text_size_xxxl">40sp</dimen>
+    <dimen name="text_size_s">14sp</dimen>
+    <dimen name="text_size_xs">12sp</dimen>
+    <dimen name="text_size_xxs">10sp</dimen>
+
+
+    <dimen name="text_size_1">10sp</dimen>
+    <dimen name="text_size_1.5">11sp</dimen>
+    <dimen name="text_size_2">12sp</dimen>
+    <dimen name="text_size_2.5">13sp</dimen>
+    <dimen name="text_size_3">14sp</dimen>
+    <dimen name="text_size_3.5">15sp</dimen>
+    <dimen name="text_size_4">16sp</dimen>
+    <dimen name="text_size_4.5">17sp</dimen>
+    <dimen name="text_size_5">18sp</dimen>
+    <dimen name="text_size_5.5">19sp</dimen>
+    <dimen name="text_size_6">20sp</dimen>
+    <dimen name="text_size_6.5">21sp</dimen>
+    <dimen name="text_size_7">22sp</dimen>
+    <dimen name="text_size_7.5">23sp</dimen>
+    <dimen name="text_size_8">24sp</dimen>
+    <dimen name="text_size_8.5">25sp</dimen>
+    <dimen name="text_size_9">26sp</dimen>
+    <dimen name="text_size_9.5">27sp</dimen>
+    <dimen name="text_size_10">28sp</dimen>
+</resources>

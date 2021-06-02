@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="#E1E1E1" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/view_size_4"
+        android:drawable="@drawable/ic_upload_photo"
+        android:left="@dimen/view_size_4"
+        android:right="@dimen/view_size_4"
+        android:top="@dimen/view_size_4" />
+</layer-list>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            style="?attr/HeaderBlueTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/view_size_3"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="July, 2021" />
+
+        <ImageView
+            android:id="@+id/left"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/view_size_3"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/background_rounded_25_bordered_blue"
+            android:padding="6dp"
+            android:src="@drawable/ic_arrow_left"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/title"
+            app:tint="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/right"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/view_size_3"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/background_rounded_25_bordered_blue"
+            android:padding="6dp"
+            android:rotation="180"
+            android:src="@drawable/ic_arrow_left"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/title"
+            app:tint="@color/colorAccent" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/view_size_3"
+            android:layout_marginEnd="@dimen/view_size_3"
+            android:background="?attr/dividerBackground"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:id="@+id/monday"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_size_3"
+            android:layout_marginTop="@dimen/view_size_2"
+            android:fontFamily="@font/medium"
+            android:gravity="center"
+            android:text="Mon"
+            app:layout_constraintEnd_toStartOf="@id/tuesday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/tuesday"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:gravity="center"
+            android:text="Tue"
+            app:layout_constraintEnd_toStartOf="@id/wednesday"
+            app:layout_constraintStart_toEndOf="@id/monday"
+            app:layout_constraintTop_toTopOf="@id/monday" />
+
+        <TextView
+            android:id="@+id/wednesday"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:gravity="center"
+            android:text="Wed"
+            app:layout_constraintEnd_toStartOf="@id/thursday"
+            app:layout_constraintStart_toEndOf="@id/tuesday"
+            app:layout_constraintTop_toTopOf="@id/monday" />
+
+        <TextView
+            android:id="@+id/thursday"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:gravity="center"
+            android:text="Thu"
+            app:layout_constraintEnd_toStartOf="@id/friday"
+            app:layout_constraintStart_toEndOf="@id/wednesday"
+            app:layout_constraintTop_toTopOf="@id/monday" />
+
+        <TextView
+            android:id="@+id/friday"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:gravity="center"
+            android:text="Fri"
+            app:layout_constraintEnd_toStartOf="@id/saturday"
+            app:layout_constraintStart_toEndOf="@id/thursday"
+            app:layout_constraintTop_toTopOf="@id/monday" />
+
+        <TextView
+            android:id="@+id/saturday"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:gravity="center"
+            android:text="Sat"
+            app:layout_constraintEnd_toStartOf="@id/sunday"
+            app:layout_constraintStart_toEndOf="@id/friday"
+            app:layout_constraintTop_toTopOf="@id/monday" />
+
+        <TextView
+            android:id="@+id/sunday"
+            style="?attr/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/view_size_3"
+            android:fontFamily="@font/medium"
+            android:gravity="center"
+            android:text="Sun"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/saturday"
+            app:layout_constraintTop_toTopOf="@id/monday" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/calendar_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/view_size_3"
+            android:layout_marginTop="@dimen/view_size_2"
+            android:layout_marginEnd="@dimen/view_size_3"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="7:6"
+            app:layout_constraintTop_toBottomOf="@id/monday" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

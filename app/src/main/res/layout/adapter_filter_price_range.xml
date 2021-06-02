@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="?attr/Medium18BlackStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_size_5"
+            android:layout_marginTop="@dimen/view_size_3"
+            android:layout_marginEnd="@dimen/view_size_5"
+            android:text='@{keys.price_range,default = "Price range"}' />
+
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/slide"
+            style="@style/Slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_size_3"
+            android:layout_marginEnd="@dimen/view_size_3"
+            app:layout_constraintTop_toBottomOf="@id/price"
+            app:thumbColor="@color/colorAccent"
+            app:thumbRadius="12dp"
+            app:thumbStrokeColor="@color/white"
+            app:thumbStrokeWidth="3dp"
+            app:trackColorActive="@color/colorAccent"
+            app:trackColorInactive="@color/black_20"
+            app:trackHeight="10dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_size_3"
+            android:layout_marginEnd="@dimen/view_size_3"
+            android:paddingStart="@dimen/view_size_2"
+            android:paddingEnd="@dimen/view_size_2">
+
+            <TextView
+                android:id="@+id/start_price"
+                style="?attr/Bold16BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start" />
+
+            <TextView
+                android:id="@+id/end_price"
+                style="?attr/Bold16BlackStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

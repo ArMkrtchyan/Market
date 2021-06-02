@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/view_size_4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rounded_6"
+            android:paddingStart="@dimen/view_size_2"
+            android:paddingTop="@dimen/view_size_3"
+            android:paddingEnd="@dimen/view_size_2"
+            android:paddingBottom="@dimen/view_size_3">
+
+            <TextView
+                android:id="@+id/title"
+                style="?attr/HeaderBlueTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:gravity="center"
+                android:paddingStart="@dimen/view_size_6"
+                android:paddingEnd="@dimen/view_size_6"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_7"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/rate_the_product" />
+
+            <RatingBar
+                android:id="@+id/rating"
+                style="@style/RatingBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:max="5"
+                app:layout_constraintBottom_toTopOf="@id/message"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/message"
+                style="?attr/InputStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:gravity="start"
+                android:hint="@string/leave_feedback"
+                android:imeOptions="actionDone"
+                android:lines="6"
+                android:minLines="6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintWidth_percent="0.85" />
+
+            <TextView
+                android:id="@+id/negative"
+                style="?attr/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:layout_marginBottom="@dimen/view_size_3"
+                android:background="@drawable/background_rounded_25_bordered_blue"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/positive"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/message"
+                app:layout_constraintWidth_percent="0.45"
+                tools:text="Yes" />
+
+            <TextView
+                android:id="@+id/positive"
+                style="?attr/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:layout_marginBottom="@dimen/view_size_3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/negative"
+                app:layout_constraintTop_toBottomOf="@id/message"
+                app:layout_constraintWidth_percent="0.45"
+                tools:text="Yes" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

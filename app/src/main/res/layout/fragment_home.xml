@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.HomeFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingBottom="100dp"
+            android:visibility="invisible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:elevation="3dp"
+                    android:paddingBottom="@dimen/view_size_1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_grant_market_logo"
+                        app:layout_constraintDimensionRatio="1.1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.32"
+                        tools:ignore="ContentDescription" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_size_1"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="@dimen/view_size_1"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/logo">
+
+                        <TextView
+                            style="?attr/HeaderBlueTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/medium"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="@{keys.what_are_you_looking_for ,default=@string/what_are_you_looking_for}"
+                            android:textSize="@dimen/text_size_6" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/search_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/view_size_5"
+                            android:layout_marginTop="@dimen/view_size_1"
+                            android:layout_marginEnd="@dimen/view_size_5"
+                            android:clipToPadding="false"
+                            app:boxBackgroundMode="outline"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="0dp"
+                            app:endIconCheckable="true"
+                            app:endIconDrawable="@drawable/ic_barcode"
+                            app:endIconMode="custom"
+                            app:endIconTint="@color/black"
+                            app:hintEnabled="false"
+                            app:layout_constraintTop_toBottomOf="@id/full_name_layout">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/search"
+                                style="?attr/InputStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/button_height"
+                                android:background="@drawable/background_rounded_4_bordered_light"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:focusableInTouchMode="false"
+                                android:hint="@{keys.search ,default=@string/search}"
+                                android:imeOptions="actionNext"
+                                android:textColorHint="#BCBCBC" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/banners_pager_card"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/view_size_3"
+                    android:layout_marginTop="@dimen/view_size_3"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintDimensionRatio="335:180"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/header">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/banners_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="@dimen/view_size_3"
+                    android:layout_marginTop="@dimen/view_size_1"
+                    android:layout_marginEnd="@dimen/view_size_3"
+                    android:background="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/banners_pager_card"
+                    app:tabBackground="@drawable/tab_page_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabRippleColor="@null" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/categories_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="categories_view_all,categories_list,categories_title" />
+
+                <TextView
+                    android:id="@+id/categories_title"
+                    style="?attr/Bold22BlackStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_3"
+                    android:layout_marginTop="@dimen/view_size_4"
+                    android:text='@{keys.categories, default = "Categories"}'
+                    app:layout_constraintEnd_toStartOf="@id/categories_view_all"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+
+                <TextView
+                    android:id="@+id/categories_view_all"
+                    style="?attr/Medium16BlueStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/view_size_3"
+                    android:paddingTop="2.5dp"
+                    android:paddingEnd="@dimen/view_size_3"
+                    android:paddingBottom="2.5dp"
+                    android:text='@{keys.view_all, default = "View all"}'
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/categories_title" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categories_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/view_size_1"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/view_size_3"
+                    android:paddingEnd="@dimen/view_size_3"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintDimensionRatio="3"
+                    app:layout_constraintHeight_max="150dp"
+                    app:layout_constraintTop_toBottomOf="@id/categories_title"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/adapter_view_all" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/new_arrivals_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="new_arrivals_all,new_arrivals_list,new_arrivals_title" />
+
+                <TextView
+                    android:id="@+id/new_arrivals_title"
+                    style="?attr/Bold22BlackStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_3"
+                    android:layout_marginTop="@dimen/view_size_4"
+                    android:text='@{keys.new_arrivals, default = "New arrivals"}'
+                    app:layout_constraintEnd_toStartOf="@id/new_arrivals_all"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/categories_list" />
+
+                <TextView
+                    android:id="@+id/new_arrivals_all"
+                    style="?attr/Medium16BlueStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/view_size_3"
+                    android:paddingTop="2.5dp"
+                    android:paddingEnd="@dimen/view_size_3"
+                    android:paddingBottom="2.5dp"
+                    android:text='@{keys.view_all, default = "View all"}'
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/new_arrivals_title" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/new_arrivals_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_size_1"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/view_size_2"
+                    android:paddingEnd="@dimen/view_size_2"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintDimensionRatio="1.8"
+                    app:layout_constraintHeight_min="180dp"
+                    app:layout_constraintTop_toBottomOf="@id/new_arrivals_title"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/adapter_home_new_arrivals" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/bestsellers_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="bestsellers_all,bestsellers_list,bestsellers_title" />
+
+                <TextView
+                    android:id="@+id/bestsellers_title"
+                    style="?attr/Bold22BlackStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_3"
+                    android:layout_marginTop="@dimen/view_size_4"
+                    android:text='@{keys.bestsellers, default = "Bestsellers"}'
+                    app:layout_constraintEnd_toStartOf="@id/bestsellers_all"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/new_arrivals_list" />
+
+                <TextView
+                    android:id="@+id/bestsellers_all"
+                    style="?attr/Medium16BlueStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/view_size_3"
+                    android:paddingTop="2.5dp"
+                    android:paddingEnd="@dimen/view_size_3"
+                    android:paddingBottom="2.5dp"
+                    android:text='@{keys.view_all, default = "View all"}'
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/bestsellers_title" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/bestsellers_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/view_size_1"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/view_size_3"
+                    android:paddingEnd="@dimen/view_size_3"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintDimensionRatio="1.5"
+                    app:layout_constraintHeight_max="200dp"
+                    app:layout_constraintTop_toBottomOf="@id/bestsellers_title"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/adapter_home_bestsellers" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/request_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="request,request_product,request_title" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/request"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/view_size_3"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintDimensionRatio="335:160"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bestsellers_list">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/request_info_cover" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_20" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/request_title"
+                    style="?attr/Bold22BlackStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_3"
+                    android:layout_marginTop="@dimen/view_size_3"
+                    android:layout_marginEnd="@dimen/view_size_3"
+                    android:text="@{keys.looking_for_product, default = `Looking for a particular product?`}"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/request"
+                    app:layout_constraintStart_toStartOf="@id/request"
+                    app:layout_constraintTop_toTopOf="@id/request" />
+
+                <TextView
+                    android:id="@+id/request_product"
+                    style="?attr/Bold18BlackStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_3"
+                    android:layout_marginEnd="@dimen/view_size_3"
+                    android:text="@{keys.request_here, default = `Request here!`}"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/request"
+                    app:layout_constraintStart_toStartOf="@id/request"
+                    app:layout_constraintTop_toBottomOf="@id/request_title" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/discount_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="discounts_all,discounts_list,discounts_title" />
+
+                <TextView
+                    android:id="@+id/discounts_title"
+                    style="?attr/Bold22BlackStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_3"
+                    android:layout_marginTop="@dimen/view_size_4"
+                    android:text='@{keys.discounts, default = "Discounts"}'
+                    app:layout_constraintEnd_toStartOf="@id/discounts_all"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/request" />
+
+                <TextView
+                    android:id="@+id/discounts_all"
+                    style="?attr/Medium16BlueStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/view_size_3"
+                    android:paddingTop="2.5dp"
+                    android:paddingEnd="@dimen/view_size_3"
+                    android:paddingBottom="2.5dp"
+                    android:text='@{keys.view_all, default = "View all"}'
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/discounts_title" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/discounts_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_size_1"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/view_size_2"
+                    android:paddingEnd="@dimen/view_size_2"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintHeight_min="180dp"
+                    app:layout_constraintTop_toBottomOf="@id/discounts_title"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/adapter_home_discounts" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.armboldmind.grandmarket.shared.customview.StateLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="2dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Home Page"
+                android:textColor="@color/black"
+                android:textSize="40sp" />
+        </FrameLayout>
+    </RelativeLayout>
+</layout>

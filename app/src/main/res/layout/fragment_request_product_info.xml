@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/CardBackgroundColor"
+            android:elevation="3dp"
+            app:navigationIcon="@drawable/ic_back">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="?attr/Bold18BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text='@{keys.requests,default = @string/requests}' />
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:id="@+id/mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingBottom="100dp"
+            android:scrollbars="none">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/view_size_3"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintDimensionRatio="335:160"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/request_info_cover" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/main_title"
+                    style="?attr/Bold20BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/view_size_3"
+                    android:gravity="center"
+                    android:text='@{keys.looking_for_product, default = "Looking for a particular\nproduct?"}'
+                    app:layout_constraintTop_toBottomOf="@id/cover" />
+
+                <TextView
+                    android:id="@+id/description"
+                    style="?attr/Medium18BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/view_size_3"
+                    android:gravity="center"
+                    android:text='@{keys.request_info_description, default = "Were always happy to special order the products that our customers love and request. If theres a product you would like us to carry, let us know about."}'
+                    app:layout_constraintTop_toBottomOf="@id/main_title" />
+
+                <TextView
+                    android:id="@+id/title"
+                    style="?attr/Bold20BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/view_size_3"
+                    android:gravity="center"
+                    android:text='@{keys.request_info_title, default = "How to make a product\nrequest?"}'
+                    app:layout_constraintTop_toBottomOf="@id/description" />
+
+                <View
+                    android:id="@+id/line_1"
+                    android:layout_width="40dp"
+                    android:layout_height="6dp"
+                    android:layout_margin="@dimen/view_size_3"
+                    android:background="@drawable/background_gradient_rounded_25"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title" />
+
+                <TextView
+                    android:id="@+id/hint_1"
+                    style="?attr/Medium16BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_3"
+                    android:layout_marginTop="@dimen/view_size_1"
+                    android:layout_marginEnd="@dimen/view_size_3"
+                    android:gravity="start"
+                    android:lineSpacingExtra="6dp"
+                    android:text='@{keys.request_info_hint_1, default = "Content describing the steps for sending requests. Here you should describe the first step."}'
+                    app:layout_constraintTop_toBottomOf="@id/line_1" />
+
+                <View
+                    android:id="@+id/line_2"
+                    android:layout_width="40dp"
+                    android:layout_height="6dp"
+                    android:layout_margin="@dimen/view_size_3"
+                    android:background="@drawable/background_gradient_rounded_25"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hint_1" />
+
+                <TextView
+                    android:id="@+id/hint_2"
+                    style="?attr/Medium16BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_3"
+                    android:layout_marginTop="@dimen/view_size_1"
+                    android:layout_marginEnd="@dimen/view_size_3"
+                    android:gravity="start"
+                    android:lineSpacingExtra="6dp"
+                    android:text='@{keys.request_info_hint_2, default = "Content describing the steps for sending requests. Here you should describe the first step."}'
+                    app:layout_constraintTop_toBottomOf="@id/line_2" />
+
+                <View
+                    android:id="@+id/line_3"
+                    android:layout_width="40dp"
+                    android:layout_height="6dp"
+                    android:layout_margin="@dimen/view_size_3"
+                    android:background="@drawable/background_gradient_rounded_25"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hint_2" />
+
+                <TextView
+                    android:id="@+id/hint_3"
+                    style="?attr/Medium16BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_3"
+                    android:layout_marginTop="@dimen/view_size_1"
+                    android:layout_marginEnd="@dimen/view_size_3"
+                    android:gravity="start"
+                    android:lineSpacingExtra="6dp"
+                    android:text='@{keys.request_info_hint_3, default = "Content describing the steps for sending requests. Here you should describe the first step."}'
+                    app:layout_constraintTop_toBottomOf="@id/line_3" />
+
+                <TextView
+                    android:id="@+id/request_product"
+                    style="?attr/ButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_margin="@dimen/view_size_6"
+                    android:gravity="center"
+                    android:text='@{keys.request_now, default = "Request now"}'
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hint_3"
+                    app:layout_constraintWidth_percent="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

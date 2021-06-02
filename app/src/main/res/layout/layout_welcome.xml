@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/view_size_3"
+        android:paddingTop="@dimen/view_size_1"
+        android:paddingEnd="@dimen/view_size_3"
+        android:paddingBottom="@dimen/view_size_1">
+
+        <TextView
+            style="@style/Medium20BlackStyleLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:text="@{keys.welcome_title , default = @string/welcome}"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size_6" />
+
+        <TextView
+            style="@style/Regular16BlackStyleLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_size_1"
+            android:text='@{keys.welcome_description , default = @string/sign_in_to_discover_new_features_make_purchases_and_track_orders}' />
+
+        <TextView
+            android:id="@+id/sign_in"
+            style="?attr/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_size_1"
+            android:paddingStart="@dimen/view_size_3"
+            android:paddingTop="8dp"
+            android:paddingEnd="@dimen/view_size_3"
+            android:paddingBottom="8dp"
+            android:text='@{keys.sign_in , default = @string/sign_in}'
+            android:textSize="@dimen/text_size_2" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

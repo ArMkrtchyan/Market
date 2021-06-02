@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="product"
+            type="com.armboldmind.grandmarket.data.models.domain.Product" />
+
+        <variable
+            name="isFavorite"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/view_size_2"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:shimmer_colored="true"
+                app:shimmer_duration="1500"
+                app:shimmer_highlight_color="@color/shimmer_color_light"
+                app:shimmer_repeat_mode="restart"
+                app:shimmer_shape="linear">
+
+                <View
+                    android:id="@+id/thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white_66" />
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/faq_header" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/view_size_2"
+                android:background="@color/black_16"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="?attr/DescriptionTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rounded_2"
+                    android:backgroundTint="#E10505"
+                    android:backgroundTintMode="src_over"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text='@{String.valueOf(product.discount) + "%"}'
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_3"
+                    android:visibility="@{product.discountAmount > 0 ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{isFavorite ? @drawable/ic_favorite : @drawable/ic_favorites_unselected_white, default = @drawable/ic_menu_item_favorites_unselected}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/brand"
+                    style="?attr/HeaderBlueTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/medium"
+                    android:lines="1"
+                    android:text="@{product.brandName}"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_2.5"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/title"
+                    style="?attr/Bold14BlackStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/medium"
+                    android:lines="2"
+                    android:textColor="@color/white"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="@{product.productName}"
+                    android:textSize="@dimen/text_size_2.5"
+                    app:layout_constraintBottom_toTopOf="@id/price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/price"
+                    style="?attr/Medium16BlackStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/medium"
+                    android:maxLines="1"
+                    android:text='@{product.discountAmount > 0 ? product.discountAmountFormatted : product.productPriceFormatted}'
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/old_price"
+                    style="?attr/Medium14BlackStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_size_1"
+                    android:ellipsize="end"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/medium"
+                    android:maxLines="1"
+                    android:text="@{product.productPriceFormatted}"
+                    android:visibility="@{product.discountAmount > 0 ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="@id/price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/price"
+                    app:layout_constraintTop_toTopOf="@id/price" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

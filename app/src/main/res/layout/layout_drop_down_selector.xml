@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <View
+        android:id="@+id/layout_full"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background_rounded_4_bordered_light"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background_rounded_4_bordered_light"
+        app:layout_constraintBottom_toBottomOf="@id/selected_option_hint"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/selected_option_hint"
+        style="?attr/DescriptionTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_toStartOf="@id/arrow"
+        android:focusableInTouchMode="false"
+        android:fontFamily="@font/medium"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/view_size_3"
+        android:paddingEnd="@dimen/view_size_3"
+        android:textColorHint="@color/hint_text_color_light"
+        android:textSize="@dimen/text_size_4"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@id/arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:hint="Select option" />
+
+    <TextView
+        android:id="@+id/selected_option"
+        style="?attr/DescriptionTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_toStartOf="@id/arrow"
+        android:focusableInTouchMode="false"
+        android:fontFamily="@font/medium"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/view_size_3"
+        android:paddingEnd="@dimen/view_size_3"
+        android:textSize="@dimen/text_size_4"
+        app:layout_constraintEnd_toStartOf="@id/arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/technical_support" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="16dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/view_size_3"
+        android:rotation="-90"
+        android:src="@drawable/ic_arrow_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black"
+        tools:ignore="ContentDescription" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/options_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/selected_option_hint"
+        tools:itemCount="5"
+        tools:listitem="@layout/adapter_option_item" />
+</androidx.constraintlayout.widget.ConstraintLayout>

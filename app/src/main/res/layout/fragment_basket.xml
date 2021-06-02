@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".ui.basket.BasketFragment">
+
+        <TextView
+            android:id="@+id/toolbar"
+            style="?attr/HeaderBlueTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="3dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/view_size_5"
+            android:text="@string/basket"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/delete_basket"
+            style="?attr/HeaderBlueTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentEnd="true"
+            android:elevation="3dp"
+            android:gravity="center_vertical|end"
+            android:paddingStart="@dimen/view_size_5"
+            android:paddingEnd="@dimen/view_size_5"
+            android:text="Delete basket"
+            android:textSize="@dimen/text_size_4" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/basket"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/view_size_1"
+            android:paddingTop="@dimen/view_size_1"
+            android:paddingEnd="@dimen/view_size_1"
+            android:paddingBottom="100dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/adapter_basket_item" />
+
+
+        <com.armboldmind.grandmarket.shared.customview.StateLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="2dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Basket Page"
+                android:textColor="@color/black"
+                android:textSize="40sp" />
+        </FrameLayout>
+    </RelativeLayout>
+</layout>

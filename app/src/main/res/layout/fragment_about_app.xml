@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription">
+
+    <data>
+
+        <variable
+            name="keys"
+            type="com.armboldmind.grandmarket.data.models.entity.Keys" />
+
+        <variable
+            name="appVersion"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/CardBackgroundColor"
+            android:elevation="3dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    style="?attr/Bold18BlackStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text='@{keys.about_app,default = @string/about_app}' />
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/layout_abm"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/view_size_5"
+                android:layout_marginBottom="@dimen/view_size_2"
+                android:src="@drawable/ic_grant_market_logo"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.38" />
+
+            <TextView
+                android:id="@+id/version_tile"
+                style="?attr/DescriptionTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_size_1"
+                android:fontFamily="@font/medium"
+                android:gravity="center"
+                android:paddingStart="@dimen/view_size_3"
+                android:paddingEnd="@dimen/view_size_3"
+                android:text='@{keys.version_of_the_app,default = @string/version_of_the_app}'
+                android:textColor="@color/black_60"
+                android:textSize="@dimen/text_size_4"
+                app:layout_constraintTop_toBottomOf="@id/logo" />
+
+            <TextView
+                android:id="@+id/version"
+                style="?attr/DescriptionTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_size_1"
+                android:fontFamily="@font/medium"
+                android:gravity="center"
+                android:paddingStart="@dimen/view_size_3"
+                android:paddingEnd="@dimen/view_size_3"
+                android:text='@{appVersion}'
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_4.5"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/version_tile"
+                tools:text="0.2.0" />
+
+            <TextView
+                android:id="@+id/rate_app"
+                style="?attr/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/view_size_3"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:layout_marginEnd="@dimen/view_size_3"
+                android:layout_marginBottom="100dp"
+                android:text='@{keys.rate_app,default = @string/rate_app}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/version"
+                app:layout_constraintWidth_percent="0.5" />
+
+            <TextView
+                android:id="@+id/find_us"
+                style="?attr/DescriptionTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_size_5"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/medium"
+                android:gravity="center"
+                android:paddingStart="@dimen/view_size_3"
+                android:paddingEnd="@dimen/view_size_3"
+                android:text='@{keys.find_us_on_facebook,default = @string/find_us_on_facebook}'
+                android:textSize="@dimen/text_size_3"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/ic_facebook"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rate_app" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_abm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="110dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/powered_by"
+                style="?attr/DescriptionTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/view_size_2"
+                android:fontFamily="@font/medium"
+                android:gravity="center"
+                android:text='@{keys.powered_by,default = @string/powered_by}'
+                android:textSize="@dimen/text_size_3"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/abm_logo" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

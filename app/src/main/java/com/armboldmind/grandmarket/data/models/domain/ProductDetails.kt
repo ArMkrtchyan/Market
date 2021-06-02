@@ -1,0 +1,89 @@
+package com.armboldmind.grandmarket.data.models.domain
+
+import com.armboldmind.gsport24.root.utils.DifItem
+
+data class ProductDetails(
+    val productId: Long,
+    val productDescription: String,
+    val discountedPrice: Double,
+    val discountedPriceFormatted: String,
+    val productItemCode: String,
+    val productName: String,
+    val countryName: String,
+    val brandName: String,
+    val countryId: Long,
+    val brandId: Long,
+    val quantity: Int,
+    val price: Double,
+    val productPriceFormatted: String,
+    val productClusteredPriceId: Long,
+    val attachedAttribute: Boolean,
+    val favorite: Boolean,
+
+    val combinationAttributeGroups: List<CombinationAttributeGroup>,
+    val productMedias: List<ProductMedia>,
+    val characteristicGroupModels: List<CharacteristicGroupModel>,
+    val dimensionModels: List<DimensionModel>,
+    val categoryHierarchy: CategoryHierarchy,
+) {
+    data class CombinationAttributeGroup(
+        val attributeGroupOption: Int,
+        val attributeGroupName: String,
+        val attributeGroupId: Long,
+        val colorPicker: Boolean,
+        val combinationAttributes: List<CombinationAttribute>,
+    )
+
+    data class CombinationAttribute(
+        val productAttributeId: Long,
+        val attributeName: String,
+        val attributeId: Long,
+        val color: String,
+        val chosen: Boolean,
+    ) : DifItem<CombinationAttribute> {
+        override fun areItemsTheSame(second: CombinationAttribute): Boolean {
+            return attributeId == second.attributeId
+        }
+
+        override fun areContentsTheSame(second: CombinationAttribute): Boolean {
+            return attributeId == second.attributeId && chosen == second.chosen
+        }
+
+    }
+
+    data class ProductMedia(
+        val mediaUrl: String,
+        val coverPhoto: Boolean,
+    )
+
+    data class DimensionModel(
+        val dimensionId: Long,
+        val dimensionName: String,
+        val settingsDimensionModelInCombinations: List<SettingsDimensionModelInCombination>,
+    )
+
+    data class SettingsDimensionModelInCombination(
+        val settingsDimensionId: Long,
+        val settingsDimensionName: String,
+        val settingsDimensionValue: Double,
+    )
+
+    data class CharacteristicGroupModel(
+        val characteristicGroupId: Long,
+        val characteristicGroupName: String,
+        val selected: Boolean,
+        val characteristicModels: List<CharacteristicModel>,
+    )
+
+    data class CharacteristicModel(
+        val characteristicId: Long,
+        val characteristicName: String,
+        val selected: Boolean,
+    )
+
+    data class CategoryHierarchy(
+        val categoryId: Long,
+        val categoryName: String,
+        val childCategory: CategoryHierarchy?,
+    )
+}

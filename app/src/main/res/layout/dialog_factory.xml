@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/view_size_4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rounded_6"
+            android:paddingStart="@dimen/view_size_2"
+            android:paddingTop="@dimen/view_size_3"
+            android:paddingEnd="@dimen/view_size_2"
+            android:paddingBottom="@dimen/view_size_3">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/view_size_3"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.3"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/ic_grant_market_logo" />
+
+            <TextView
+                android:id="@+id/title"
+                style="?attr/HeaderBlueTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:gravity="center"
+                android:paddingStart="@dimen/view_size_6"
+                android:paddingEnd="@dimen/view_size_6"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_6"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/image"
+                tools:text="Delete" />
+
+            <TextView
+                android:id="@+id/description"
+                style="?attr/HeaderBlueTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_size_2"
+                android:gravity="center"
+                android:paddingStart="@dimen/view_size_6"
+                android:paddingEnd="@dimen/view_size_6"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="Are you sure you want to delete your address?" />
+
+            <TextView
+                android:id="@+id/negative"
+                style="?attr/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:layout_marginBottom="@dimen/view_size_3"
+                android:background="@drawable/background_rounded_25_bordered_blue"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/positive"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description"
+                app:layout_constraintWidth_percent="0.45"
+                tools:text="Yes" />
+
+            <TextView
+                android:id="@+id/positive"
+                style="?attr/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/view_size_3"
+                android:layout_marginBottom="@dimen/view_size_3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/negative"
+                app:layout_constraintTop_toBottomOf="@id/description"
+                app:layout_constraintWidth_percent="0.45"
+                tools:text="Yes" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

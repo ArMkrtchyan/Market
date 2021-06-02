@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="isYearSelected"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/date_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <NumberPicker
+            android:id="@+id/years"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:descendantFocusability="blocksDescendants"
+            android:selectionDividerHeight="0.5dp"
+            android:theme="@style/NumberPicker" />
+
+        <NumberPicker
+            android:id="@+id/days"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:descendantFocusability="blocksDescendants"
+            android:selectionDividerHeight="0.5dp"
+            android:theme="@style/NumberPicker" />
+
+        <NumberPicker
+            android:id="@+id/months"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:descendantFocusability="blocksDescendants"
+            android:selectionDividerHeight="0.5dp"
+            android:theme="@style/NumberPicker" />
+    </LinearLayout>
+</layout>
